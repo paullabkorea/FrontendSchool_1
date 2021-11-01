@@ -1,0 +1,14 @@
+
+file
+html file
+github
+---
+web
+request - http notion 페이지 참고하세요
+response - http notion 페이지 참고하세요
+
+
+www.naver.com                          이름     URL      
+223.130.200.107                          주소     IP
+http://paullab.synology.me:5000/    문        PORT
+http://paullab.synology.me:80/       문        PORT
