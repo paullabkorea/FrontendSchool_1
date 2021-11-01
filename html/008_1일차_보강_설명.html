@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!-- 팁 1 -->
+    <p>hello world</p>
+    <hr width="300px" align="center" size="3" color="red" noshade>
+    <p>hello world</p>
+
+    <!-- 팁 2 -->
+    <!-- HTML Validator
+        웹 표준 준수했는지 알려주는 사이트
+        https://validator.w3.org/nu/
+
+        Caniuse
+        사용할 수 있는 요소와, 사용 불가능한 요소를 벤더사들이 직접 업로드 하는 사이트
+        https://caniuse.com -->
+
+    <!-- 팁 3 -->
+    <!-- srcset 속성은 다양한 크기를 가지는 동일이미지를 최소 2개 이상 사용할 때 사용하며, 브라우저에게 선택권을 위임하는 속성입니다. 차례대로 300px 이하, 600px 이하, 900px 이하입니다. w는 px, x는 이미지 비율입니다. src는 srcset을 사용할 수 없을 때 사용하는 이미지입니다.-->
+    <img
+    width="200px"
+    srcset="img/logo_1.png 300w,
+            img/logo_2.png 600w,
+            img/logo_3.png 700w"
+    src="a.jpg"
+    alt="test">
+</body>
+</html>
