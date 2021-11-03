@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css class</title>
+    <style>
+        .one {
+            color: aqua;
+        }
+
+        .two {
+            border: solid 1px black;
+        }
+
+        .three {
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1. class는 중첩해서 사용할 수 있습니다. 반면 id는 중첩해서 사용할 수 없습니다.
+        2. page내 class는 여러개 존재해도 됩니다. 반면 id는 유일해야 합니다.
+     -->
+    <h1>hello world</h1>
+    <h1>hello world</h1>
+    <h1 class="one">hello world</h1>
+    <h1 class="two three">hello world</h1>
+    <h1 class="two">hello world</h1>
+</body>
+</html>

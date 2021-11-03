@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가변 크기 단위</title>
+    <style>
+        html, body {
+            font-size: 20px;
+        }
+
+        p {
+          font-size: 2em;
+          font-weight: 700;
+        }
+
+        div {
+            font-size: 2em;
+        }
+
+        .one {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <p>hello world</p>
+    <!-- em, %, rem, vw, vh -->
+    <div>
+        <!-- 10px * 2 = 20px -->
+        <div>
+            <!-- 20px * 2 = 40px -->
+            <div>
+                <!-- 40px * 2 = 80px -->
+                hello world
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <!-- 10px * 2 = 20px -->
+        <div>
+            <!-- 20px * 2 = 40px -->
+            <div class="one">
+                <!-- 40px * 2 = 80px -->
+                hello world
+            </div>
+        </div>
+    </div>
+</body>
+</html>

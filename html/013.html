@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 태그</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        table, tr, th, td {
+            border: solid 1px black;
+            border-collapse: collapse;
+        }
+        .구분 {
+        width: 10%;
+        }
+        .가격 {
+            width: 20%;
+        }
+        .이름 {
+            width: 30%;
+        }
+        .판매량 {
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>
+            이 table은 영국에서 최초로 시작되어 일년에 한바퀴 돌면서...
+        </caption>
+        <colgroup>
+            <col class="구분">
+            <col class="이름">
+            <col class="가격">
+            <col class="판매량">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>책 이름</th>
+                <th>책 가격</th>
+                <th>책 판매량</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>hello1</td>
+                <td>1000</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>hello2</td>
+                <td>2000</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>hello3</td>
+                <td>3000000000000000000</td>
+                <td>3</td>
+                <!-- <td rowspan="2">3</td> -->
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">총 판매량</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
