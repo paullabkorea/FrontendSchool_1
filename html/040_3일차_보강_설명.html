@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3일차_보강_설명</title>
+    <style>
+        p::after{
+          content:'';
+          display:inline-block;
+          width:15px;
+          height:15px;
+          background-image:url(https://e1.pngegg.com/pngimages/635/155/png-clipart-emoji-sticker-three-yellow-stars-illustration-thumbnail.png);
+          background-size:cover;
+        }
+
+        /* 1. 태그[속성이름] */
+        /* 속성명으로 선택했을 경우 */
+        /* div 태그이면서 class 속성을 가지고 있는 요소 */
+        div[class] {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        /* a 태그이면서 href 속성을 가지고 있는 요소 */
+        a[href] {
+            color: gray;
+        }
+
+        /* 2번부터 하나씩 주석을 해제해보며 실습해 보세요 :) */
+
+        /* 2. 태그[속성이름="값"] */
+        /* div 태그이면서 class명이 red인 요소*/
+        /* 공백을 포함하지 않기 때문에 red 클래스 하나만 가진 요소가 선택됩니다. */
+        /* div[class="red"] {
+            background-color: red;
+        } */
+
+        /* 3. 태그[속성이름~="값"] */
+        /* div 태그이면서 red인 class를 가지고 있는 요소 */
+        /* 공백을 포함하기 때문에 red 클래스를 가진 요소는 div 태그는 모두 선택됩니다. */
+        /* div[class~="red"] {
+            background-color: red;
+        } */
+
+        /* 4. 태그[속성이름*="값"] */
+        /* div 태그이면서 class 중 red 문자열을 포함하는 요소 */
+        /* div[class*="red"] {
+            background-color: red;
+        } */
+
+        /* 5. 태그[속성이름^="값"] */
+        /* div 태그이면서 class 속성값이 sky로 시작하는 요소 */
+        /* div[class^="sky"] {
+            background-color: skyblue;
+        } */
+        /* a 태그이면서 href 속성값이 http로 시작하는 요소 */
+        /* a[href^="https"] {
+            color: red;
+        } */
+
+        /* 6. 태그[속성이름$="값"] */
+        /* div 태그이면서 속성값이 pink로 끝나는 요소 */
+        /* div[class$="pink"] {
+            background-color: pink;
+        } */
+        /* a 태그이면서 href 속성값이 kr로 끝나는 요소 */
+        /* a[href$="kr"] {
+            color: black;
+        } */
+
+        /* 6. 태그[속성이름|="값"] */
+        /* a 태그이면서 href 속성값이 http이거나 http로 시작하는 요소 */
+        /* 
+           언더바(_), 공백, 합성어가 포함될 경우 적용되지 않으며,
+           독립된 값이거나 하이픈을 포함하는 값은 선택됩니다.
+         */
+        /* a[href|="http"] {
+            color: red;
+        } */
+      </style>
+</head>
+<body>
+    <!-- 팁 1 -->
+    <!-- 실무에서는 주로 이런식으로 장식적인 요소를 html 태그 없이 구현하고 싶을때 사용한다고 보시면 됩니다. -->
+    <p>안녕하세요 찡긋~ </p>
+
+    <!-- 보강설명 2 -->
+    <!-- class 속성을 가지고 있지 않아 스타일 설정이 되지 않음 -->
+    <div>1</div>
+
+    <div class="red">2</div>
+    <div class="red pink">3</div>
+    <div class="redpink skyblue pink">4</div>
+    <div class="skyblue">5</div>
+
+    <hr>
+
+    <!-- href 속성을 가지고 있지 않아 스타일 설정이 되지 않음 -->
+    <a>바울랩</a>
+
+    <a href="http://paullab.co.kr">바울랩1</a>
+    <a href="http://paullab.com">바울랩2</a>
+    <a href="https://paullab.com">바울랩3</a>
+    <a href="http">바울랩4</a>
+    <a href="http-paullab">바울랩5</a>
+</body>
+</html>

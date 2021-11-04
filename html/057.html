@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>relative</title>
+  <style>
+    
+    .box1{
+        position: static;
+        background-color: green;
+        color: white;
+        width: 100px;
+        height: 100px;
+    }
+
+    .기준 {
+        position: relative;
+    }
+    
+    .box2{
+        position: absolute;
+        left: 40px;
+        top: 30px;
+        background-color: green;
+        color: white;
+        width: 100px;
+        height: 100px;
+        z-index: 1;
+    }
+
+    .box3{
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        background-color: aqua;
+        color: white;
+        width: 100px;
+        height: 100px;
+    }
+  </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+
+    <div class="기준">
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+    </div>    
+</body>
+</html>

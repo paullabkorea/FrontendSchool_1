@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3일차_보강_설명 3</title>
+    <style>
+        /* id 100점, class 10점, tag 1점 */
+        
+        /* 우선순위 : 110 */
+        /* 
+        #one .two {
+            color: red;
+        } 
+        */
+
+        /* 우선순위 : 111 */
+        #one .two h3 {
+            color: red;
+        }
+
+        /* 우선순위 : 10 */
+        .two {
+            color: blue;
+        }
+
+        /* 우선순위 : 1 */
+        h3 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        <div class="two">
+            <h3>hello world</h3>
+        </div>
+    </div>
+</body>
+</html>

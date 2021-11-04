@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3일차_보강_설명 2</title>
+    <style>
+        /* 
+
+        2. 태그[속성이름="값"]
+        2.1 div 태그이면서 class명이 one인 요소
+        2.2 공백을 포함하지 않기 때문에 one 클래스 하나만 가진 요소가 선택됩니다. 정확하게 일치해야 합니다.
+        
+        */
+        
+        /* div[class="one"] {
+            background-color: red;
+            color:white;
+        } */
+
+        /* 
+
+        2. 태그[속성이름~="값"]
+        2.1 div 태그이면서 one인 class를 가지고 있는 요소
+        2.2 공백을 포함하기 때문에 one 클래스를 가진 요소는 div 태그는 모두 선택됩니다. 예를 들어 one two, one two three는 선택되지만 onetwo, one-two와 같은 것은 선택되지 않습니다.
+
+        */
+
+        /* div[class~="one"] {
+            background-color: red;
+            color:white;
+        } */
+
+        /* 
+
+        3. 태그[속성이름*="값"]
+        3.1 div 태그이면서 class 중 one 문자열을 포함하는 요소
+        3.2 one이라고 문자열중간에 있어도 다 포함합니다. twoonethee이런 식으로요.
+
+        */
+        /* div[class*="one"] {
+            background-color: red;
+            color:white;
+        } */
+      </style>
+</head>
+<body>
+    <!-- 보강설명 3 (2 정리) -->
+    <!-- class 속성을 가지고 있지 않아 스타일 설정이 되지 않음 -->
+    <div>1</div>
+    <div class="one">2</div>
+    <div class="one two">3</div>
+    <div class="one two three">4</div>
+    <div class="onetwo three">5</div>
+    <div class="one-two three">6</div>
+    <div class="twoonethree">7</div>
+</body>
+</html>
