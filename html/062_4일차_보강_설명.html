@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보강설명</title>
+    <style>
+      div {
+        width: 425px;
+        height: 200px;
+        margin: 20px;
+        background-image: url("https://www.tvn-2.com/nacionales/Imagen-ilustrativa-gato-medio-bosque_18585331.jpg");
+        background-size: 100px auto;
+        border: 4px solid black;
+      }
+      .repeat {
+        /* 반복 */
+        background-repeat: repeat;
+      }
+      .repeat-x {
+        /* x축만 반복 */
+        background-repeat: repeat-x;
+      }
+      .repeat-y {
+        /* y축만 반복 */
+        background-repeat: repeat-y;
+      }
+      .no-repeat {
+        /* 반복 없음*/
+        background-repeat: no-repeat;
+      }
+      .round {
+        /* 이미지 짤리지 않게, 이미지 크기 변화를 줘서 간격 없이 반복*/
+        background-repeat: round;
+      }
+      .space {
+      /* 이미지 짤리지 않게 반복, 이미지 크기는 유지한채로 간격 없이 반복*/
+        background-repeat: space;
+      }
+    </style>
+</head>
+<body>
+    <!--
+
+    정리 1
+    - inline : 줄바꿈이 되지 않고, width와 height, margin-top, margin-bottom 값을 지정할 수 없습니다. (이전에 나옴)
+    - block : width, height, margin, padding 등 모든 값을 지정할 수 있으며, 항상 줄바꿈이 일어납니다. (이전에 나옴)
+    - inline-block : inline 처럼 한 줄에 여러 요소가 존재할수 있습니다. block 처럼 width, height, margin, padding 등 모든 값을 지정할 수 있습니다. inline 속성의 특징과 block 속성의 특징이 함께 존재합니다. (이후에 나옴)
+    - contents : 선택한 요소의 내용 앞이나 뒤에 콘텐츠를 붙입니다.
+    - flex : 레이아웃을 다룰 때 하나의 행 또는 열을 다룹니다. (1차원 레이아웃)
+    - grid : 2차원 레이아웃을 설정하는데 사용합니다.
+
+    -->
+
+    <!-- 정리 2 -->
+    <!-- 
+        background-image의 경우 repeat 속성들에 대한 
+        조금 더 다양한 예제 
+    -->
+    <div class="repeat"></div>
+    <div class="repeat-x"></div>
+    <div class="repeat-y"></div>
+    <div class="no-repeat"></div>
+    <div class="round"></div>
+    <div class="space"></div>
+</body>
+</html>
