@@ -1,0 +1,215 @@
+<!-- 김정희님 코드 리뷰 -->
+
+<!-- <!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css">
+    <title>float</title>
+    <style>
+        .header {
+            /* width: 900px; */
+            height: 100px;
+            background: royalblue;
+        }
+
+        .main {
+            /* overflow: hidden; */
+            height: 200px;
+        }
+
+        .main div:first-child {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background: saddlebrown;
+        }
+
+        .main div {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background: seagreen;
+        }
+
+        .main div:last-child {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background: silver;
+        }
+
+        .footer {
+            /* width: 900px; */
+            height: 100px;
+            background: slateblue;
+        }
+
+        .main div:first-child,
+        .main div:nth-child(2),
+        .main div:last-child {
+            width: 33.3333%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="main">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html> -->
+
+
+<!-- 준우님 코드 -->
+<!-- <!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스만들기</title>
+    <style>
+        .wrap::after {
+            display: table;
+            content: "";
+            clear: both;
+        }
+
+        .header {
+            width: 300px;
+            height: 100px;
+            background: blue;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            float: left;
+            background: green;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            float: left;
+            background: red;
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            float: left;
+            background: purple;
+        }
+
+        .bottom {
+            clear: both;
+            width: 300px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="header"></div>
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="bottom"></div>
+    </div>
+</body> -->
+
+
+
+<!-- 제섭님 코드 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상자 만들기</title>
+    <style>
+        #Top {
+            /* width: 100%; */
+            height: 100px;
+            /* clear: both; */
+            background-color: skyblue;
+        }
+
+        /* #content {
+            float: left;
+            width: 33.3333%;
+            background-color: red;
+            height: 100px;
+        } */
+
+        .f1::after {
+            content: '';
+            display: block;
+            float: left;
+            width: 33.3333%;
+            height: 100px;
+            background: green;
+        }
+
+        .f1::before {
+            content: '';
+            display: block;
+            float: left;
+            width: 33.3333%;
+            height: 100px;
+            background: black;
+        }
+
+        /* .f2::before {
+            float: right;
+            width: 300px;
+            height: 100px;
+            background: purple;
+        } */
+        .item-middle {
+            float: left;
+            width: 33.3333%;
+            height: 100px;
+            background: pink;
+        }
+
+        #footer {
+            background-color: yellow;
+            width: 100%;
+            height: 100px;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Top"></div>
+    <div id="content" class="f1">
+        <div class="item-middle"></div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

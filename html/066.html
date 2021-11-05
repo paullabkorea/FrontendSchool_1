@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* float 해제하는 여러가지 방법들 */
+
+        /* clear-fix */
+        /* .clear-fix::after {
+            display: table;
+            content: '';
+            clear: both;
+        }
+
+        .clear-fix {
+            clear: both;
+        } */
+
+        li {
+            /* float: left; */
+            width: 300px;
+            height: 100px;
+            background: pink;
+        }
+
+        li:nth-child(2) {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="clear-fix">
+        <li>asf</li>
+        <li>asf</li>
+        <li>asdf</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naver login</title>
+    <!-- 조아라님의 코드 리뷰 -->
+    <style>
+        .container {
+            padding: 16px 16px 12px 17px;
+            background-color: #f7f9fa;
+            border: 1px solid #dae1e6;
+            overflow: hidden;
+        }
+
+        p {
+            font-size: 12px;
+            color: #808080;
+        }
+
+        .button {
+            padding: 15px 0;
+            margin-top: 11px;
+            margin-bottom: 13px;
+            background-color: #19ce60;
+            border: 1px solid #15c654;
+            border-radius: 2px;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .find {
+            float: left;
+        }
+
+        .find::before {
+            float: left;
+            margin-top: 1px;
+            margin-right: 5px;
+            content: '';
+            width: 7px;
+            height: 10px;
+            /* background-color: #19ce60; */
+            background-image: url('images/lock.png');
+            background-size: contain;
+            /* background-repeat: no-repeat; */
+        }
+
+        .signup {
+            float: right;
+        }
+
+        .img1 {
+            height: 14px;
+            margin-right: 5px;
+            vertical-align: top;
+            margin-top: -1px;
+        }
+
+        .img2 {
+            float: left;
+            width: 10px;
+            margin: -1px 5px 0 0;
+        }
+
+        .img3 {
+            float: left;
+            width: 10px;
+            margin: 1px 5px 0 0;
+        }
+
+        .text {
+            float: left;
+            font-size: 12px;
+            color: #505050;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+        <article class="button">
+            <img class="img1" src="./images/title.png">
+            로그인
+        </article>
+        <article class="find">
+
+            <!-- <img class="img2" src="./images/lock.png" alt=""> -->
+            <div class="text">아이디 · 비밀번호찾기</div>
+        </article>
+        <article class="signup">
+            <img class="img3" src="./images/user.png">
+            <div class="text">회원가입</div>
+        </article>
+    </section>
+</body>
+
+</html>
