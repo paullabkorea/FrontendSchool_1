@@ -1,0 +1,115 @@
+<!-- 기발한 아이디어 콘테스트 -->
+<!-- 강혜진님 명언뽑기! -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글자 슬라이드</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+  <style>
+    /* animation */
+    @keyframes 돌아 {
+      0% {
+        transform: translateY(0);
+      }
+
+      25% {
+        transform: translateY(-20%);
+      }
+
+      50% {
+        transform: translateY(-40%);
+      }
+
+      75% {
+        transform: translateY(-60%);
+      }
+
+      100% {
+        transform: translateY(-80%);
+      }
+    }
+
+    /* reset */
+    body,
+    h1,
+    h2,
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    /* style */
+    body {
+      background: #eee;
+      font-family: 'Song Myung', serif;
+    }
+
+    .name {
+      margin: 100px;
+      font-size: 30px;
+      text-align: center;
+      color: #333;
+    }
+
+    .name-job {
+      position: relative;
+      height: 100px;
+      line-height: 100px;
+      font-size: 30px;
+      letter-spacing: -2px;
+      overflow: hidden;
+      color: #000;
+    }
+
+    .name-job::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: inset 0 0 10px 10px #eee;
+    }
+
+    .name-job-list {
+      animation: 돌아 ease 1s infinite;
+    }
+
+    .name:hover .name-job-list {
+      animation-play-state: paused;
+    }
+
+    .name-title {
+      color: crimson;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="name">
+    오늘의 명언
+    <div class="name-job">
+      <ul class="name-job-list">
+        <li>비관은 기분이지만 낙관은 의지다 - 프랑스의 철학자 알랭</li>
+        <li>공유하고 나누는 사람의 최종 이익이 커진다- 아마구치 슈</li>
+        <li>완벽하려고 애쓰지 마세요. 모든 것엔 틈이 있답니다. 그 틈으로 빛이 들어오죠 - 레너드 코헨</li>
+        <li>실험한다는 것은 자신에게 틀릴 수 있는 자유를 준다는 의미다. - 시어도어 다이먼</li>
+        <li>도구가 진화하면 사람의 욕망과 크리에이티브도 진화한다. - 하라켄야</li>
+      </ul>
+    </div>
+    <h2 class="name-title">하.면.된.다</h2>
+  </div>
+</body>
+
+</html>

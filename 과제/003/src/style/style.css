@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/* util */
+.sr-only {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* 한줄 말줄임 */
+.sl-ellipsis {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 두 줄 말줄임 */
+.multi-ellipsis {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* style */
+.cont-movie {
+    width: 1006px;
+    margin: 86px auto 0;
+    padding: 0 27px 29px;
+    border: 2px solid #BDBDBD;
+    border-radius: 15px;
+    background: #E5E5E5;
+}
+
+.cont-movie .tit-cont {
+    font-size: 25px;
+    text-align: center;
+    line-height: 28px;
+    padding: 38px 0;
+}
+
+.cont-movie .nav-movie {
+    text-align: center;
+}
+
+.cont-movie .nav-movie::before {
+    display: block;
+    content: "";
+    width: 650px;
+    height: 2px;
+    background: #BDBDBD;
+    margin: 0 auto;
+}
+
+.cont-movie .list-movieNav {
+    display: inline-block;
+    margin: 27px 0;
+}
+
+.cont-movie .list-movieNav li {
+    float: left;
+}
+
+.cont-movie .list-movieNav li + li {
+    margin-left: 60px;
+}
+
+.cont-movie .list-movieNav .link-nav {
+    color: #828282;
+}
+
+.cont-movie .list-movieNav .on .link-nav{
+    color: #000;
+    font-weight: bold;
+}
