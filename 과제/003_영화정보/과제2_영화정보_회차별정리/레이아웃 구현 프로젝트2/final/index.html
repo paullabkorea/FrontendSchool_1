@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungle Cinema</title>
+    <link rel="stylesheet" href="src/style/reset.css">
+    <link rel="stylesheet" href="src/style/style.css">
+</head>
+
+<body>
+    <!-- 접근성을 위해 -->
+    <!-- 아래 아이디가 눌렀을 경우 이동하게 하는 용도 -->
+    <!-- html, css 모두 작성 -->
+    <div class="nav-skip">
+        <a href="#cont-nav">영화 정보 목록 바로가기</a>
+        <a href="#cont-company">회사정보 바로가기</a>
+    </div>
+    <h1 class="sr-only">정글 시네마</h1>
+    <!-- 익스플로러 9에서는 main을 먹지 않음 -->
+    <section class="cont-movie">
+        <h2 class="tit-cont">정글 시네마 영화 목록</h2>
+        <header>
+            <h3 class="sr-only">영화 정보 목록</h3>
+            <nav id="cont-nav" class="nav-movie">
+                <ul class="list-movieNav">
+                    <li class="on"><a href="#none" class="link-nav">현재상영영화</a></li>
+                    <li><a href="#none" class="link-nav">개봉예정영화</a></li>
+                    <li><a href="#none" class="link-nav">박스오피스</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <h3 class="sr-only">현재 상영 영화 목록</h3>
+            <ul class="list-movieInfo">
+                <li>
+                    <article>
+                        <h4 class="sr-only">영화 상세 정보</h4>
+                        <a href="#none" class="link-movie">
+                            <span class="sr-only">영화 상세페이지로 이동</span>
+                            <img src="src/images/movie_weniv.png" alt="위니브 월드 : 새로운 시대">
+                        </a>
+                        <strong class="tit-movie sl-ellipsis">위니브 월드 : 새로운 시대</strong>
+                        <dl class="list-info">
+                            <div>
+                                <dt>개요</dt>
+                                <dd>판타지</dd>
+                            </div>
+                            <div class="item-star">
+                                <dt>평점</dt>
+                                <dd>9.05</dd>
+                            </div>
+                            <div>
+                                <dt>개봉</dt>
+                                <dd>2021.03.27</dd>
+                            </div>
+                            <div>
+                                <dt>출연</dt>
+                                <dd class="multi-ellipsis">라이캣, 소울곰, 개리씨, 빙키, 썬, 뮤라, 자바독, 소울곰, 웨이드</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <a href="#none" class="link-reserv">예매하기</a><a href="#none" class="link-teaser">예고편</a>
+                </li>
+                <li>
+                    <article>
+                        <h4 class="sr-only">영화 상세 정보</h4>
+                        <a href="#none" class="link-movie">
+                            <span class="sr-only">영화 상세페이지로 이동</span>
+                            <img src="src/images/movie_java.png" alt="눈떠보니 코딩테스트 전날 with JAVA">
+                        </a>
+                        <strong class="tit-movie sl-ellipsis">눈떠보니 코딩테스트 전날 with JAVA</strong>
+                        <dl class="list-info">
+                            <div>
+                                <dt>개요</dt>
+                                <dd>스릴러</dd>
+                            </div>
+                            <div class="item-star">
+                                <dt>평점</dt>
+                                <dd>8.25</dd>
+                            </div>
+                            <div>
+                                <dt>개봉</dt>
+                                <dd>2021.04.01</dd>
+                            </div>
+                            <div>
+                                <dt>출연</dt>
+                                <dd class="multi-ellipsis">캣, 파이, 썬</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <a href="#none" class="link-reserv">예매하기</a><a href="#none" class="link-teaser">예고편</a>
+                </li>
+                <li>
+                    <article>
+                        <h4 class="sr-only">영화 상세 정보</h4>
+                        <a href="#none" class="link-movie">
+                            <span class="sr-only">영화 상세페이지로 이동</span>
+                            <img src="src/images/movie_bootcamp.png" alt="파이썬 부트캠프">
+                        </a>
+                        <strong class="tit-movie sl-ellipsis">파이썬 부트캠프</strong>
+                        <dl class="list-info">
+                            <div>
+                                <dt>개요</dt>
+                                <dd>드라마</dd>
+                            </div>
+                            <div class="item-star">
+                                <dt>평점</dt>
+                                <dd>8.77</dd>
+                            </div>
+                            <div>
+                                <dt>개봉</dt>
+                                <dd>2021.04.12</dd>
+                            </div>
+                            <div>
+                                <dt>출연</dt>
+                                <dd class="multi-ellipsis">캣, 파이, 썬, 뮤라</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <a href="#none" class="link-reserv">예매하기</a><a href="#none" class="link-teaser">예고편</a>
+                </li>
+                <li>
+                    <article>
+                        <h4 class="sr-only">영화 상세 정보</h4>
+                        <a href="#none" class="link-movie">
+                            <span class="sr-only">영화 상세페이지로 이동</span>
+                            <img src="src/images/movie_nginx.png" alt="웹서버 셀럽 NGINX 파헤치기">
+                        </a>
+                        <strong class="tit-movie sl-ellipsis">웹서버 셀럽 NGINX 파헤치기</strong>
+                        <dl class="list-info">
+                            <div>
+                                <dt>개요</dt>
+                                <dd>드라마</dd>
+                            </div>
+                            <div class="item-star">
+                                <dt>평점</dt>
+                                <dd>9.88</dd>
+                            </div>
+                            <div>
+                                <dt>개봉</dt>
+                                <dd>2021.04.15</dd>
+                            </div>
+                            <div>
+                                <dt>출연</dt>
+                                <dd class="multi-ellipsis">NGINX, 노션</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <a href="#none" class="link-reserv">예매하기</a><a href="#none" class="link-teaser">예고편</a>
+                </li>
+                <li>
+                    <article>
+                        <h4 class="sr-only">영화 상세 정보</h4>
+                        <a href="#none" class="link-movie">
+                            <span class="sr-only">영화 상세페이지로 이동</span>
+                            <img src="src/images/movie_meetup.png" alt="어쩌다 밋업">
+                        </a>
+                        <strong class="tit-movie sl-ellipsis">어쩌다 밋업</strong>
+                        <dl class="list-info">
+                            <div>
+                                <dt>개요</dt>
+                                <dd>드라마</dd>
+                            </div>
+                            <div class="item-star">
+                                <dt>평점</dt>
+                                <dd>9.25</dd>
+                            </div>
+                            <div>
+                                <dt>개봉</dt>
+                                <dd>2021.04.17</dd>
+                            </div>
+                            <div>
+                                <dt>출연</dt>
+                                <dd class="multi-ellipsis">라이켓, 자바독, 소울곰</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <a href="#none" class="link-reserv">예매하기</a><a href="#none" class="link-teaser">예고편</a>
+                </li>
+                <li>
+                    <article>
+                        <h4 class="sr-only">영화 상세 정보</h4>
+                        <a href="#none" class="link-movie">
+                            <span class="sr-only">영화 상세페이지로 이동</span>
+                            <img src="src/images/movie_pygame.png" alt="PyGame">
+                        </a>
+                        <strong class="tit-movie sl-ellipsis">파이게임 어드벤처</strong>
+                        <dl class="list-info">
+                            <div>
+                                <dt>개요</dt>
+                                <dd>판타지 액션</dd>
+                            </div>
+                            <div class="item-star">
+                                <dt>평점</dt>
+                                <dd>8.56</dd>
+                            </div>
+                            <div>
+                                <dt>개봉</dt>
+                                <dd>2021.04.05</dd>
+                            </div>
+                            <div>
+                                <dt>출연</dt>
+                                <dd class="multi-ellipsis">개리씨, 파이썬</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <a href="#none" class="link-reserv">예매하기</a><a href="#none" class="link-teaser">예고편</a>
+                </li>
+                <li>
+                    <article>
+                        <h4 class="sr-only">영화 상세 정보</h4>
+                        <a href="#none" class="link-movie">
+                            <span class="sr-only">영화 상세페이지로 이동</span>
+                            <img src="src/images/movie_mbti.png" alt="MBTI">
+                        </a>
+                        <strong class="tit-movie sl-ellipsis">MBTI는 내 운명</strong>
+                        <dl class="list-info">
+                            <div>
+                                <dt>개요</dt>
+                                <dd>로맨스</dd>
+                            </div>
+                            <div class="item-star">
+                                <dt>평점</dt>
+                                <dd>9.02</dd>
+                            </div>
+                            <div>
+                                <dt>개봉</dt>
+                                <dd>2021.04.12</dd>
+                            </div>
+                            <div>
+                                <dt>출연</dt>
+                                <dd class="multi-ellipsis">라이켓, 자바독, 개리씨</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <a href="#none" class="link-reserv">예매하기</a><a href="#none" class="link-teaser">예고편</a>
+                </li>
+                <li>
+                    <article>
+                        <h4 class="sr-only">영화 상세 정보</h4>
+                        <a href="#none" class="link-movie">
+                            <span class="sr-only">영화 상세페이지로 이동</span>
+                            <img src="src/images/movie_pyqt.png" alt="PyQt의 사랑">
+                        </a>
+                        <strong class="tit-movie sl-ellipsis">PyQt의 사랑</strong>
+                        <dl class="list-info">
+                            <div>
+                                <dt>개요</dt>
+                                <dd>로맨스</dd>
+                            </div>
+                            <div class="item-star">
+                                <dt>평점</dt>
+                                <dd>8.81</dd>
+                            </div>
+                            <div>
+                                <dt>개봉</dt>
+                                <dd>2021.04.08</dd>
+                            </div>
+                            <div>
+                                <dt>출연</dt>
+                                <dd class="multi-ellipsis">파이썬, 큐티</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <a href="#none" class="link-reserv">예매하기</a><a href="#none" class="link-teaser">예고편</a>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <footer id="cont-company" class="cont-company">
+        <section class="cont-coInfo">
+            <h2 class="sr-only">기업정보</h2>
+            <strong class="tit-company">Jungle Cinema</strong>
+            <dl class="list-coInfo">
+                <dt class="sr-only">사명</dt>
+                <dd>(주)정글 시네마</dd>
+                <dt>대표</dt>
+                <dd>라이캣</dd>
+                <dt>사업자번호</dt>
+                <dd>000-0000-0000</dd>
+                <dd>광고 영화 및 비디오물 제작업</dd>
+                <dt>주소</dt>
+                <dd>제주특별자치도</dd>
+            </dl>
+            <em class="sr-only">sns 링크 목록</em>
+            <ul class="list-sns">
+                <li><a href="#none" class="link-twitter">트위터</a></li>
+                <li><a href="#none" class="link-insta">인스타그램</a></li>
+                <li><a href="#none" class="link-facebook">페이스북</a></li>
+            </ul>
+            <small class="txt-copy">Copyright &copy;The Jungle. All Rights Reserved.</small>
+        </section>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transition Test</title>
+  <style>
+		.box{
+			width:100px;
+			height:100px;
+			background:dodgerblue;
+			transition:all 1s;
+			/* transform-origin:left top; */
+            transform-origin: right;
+		}
+		.box:hover{
+			transform:rotate(360deg);
+		}
+
+  </style>
+</head>
+<body>
+  <div class="box">hello world</div>
+</body>
+</html>

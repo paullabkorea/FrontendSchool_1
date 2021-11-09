@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* 주석이 한글깨짐 방지 */
+
+/* 유틸리티 */
+/* 스크린리더 전용 */
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    /* 0으로 했을 경우 스크린리더가 못읽는 경우가 있어 1px로 설정 */
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+/* 한줄 말줄임 */
+.sl-ellipsis {
+    display:block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 두줄 말줄임 */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp */
+.multi-ellipsis{
+  overflow: hidden;
+  display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+  /* 아래 잘리는 현상 해결 */
+  /* padding-bottom: 3px; */
+}
+
+/* 컨테이너 스타일 */
+.cont-movie{
+    width:1006px;
+    margin:86px auto 0;
+    padding:0 27px 29px;
+    border: 2px solid #BDBDBD;
+    border-radius: 15px;
+    background:#E5E5E5;
+}
+.cont-movie .tit-cont{
+    font-size:24px;
+    text-align: center;
+    line-height:28px;
+    padding:38px 0;
+}
+
+/* nav 스타일 */
+.cont-movie .nav-movie{
+    text-align: center;
+}
+/* 장식요소는 마크업으로 하기엔 다소 아까운 면이 있음 */
+/* 마크업은 단순한 것이 좋으니 */
+.cont-movie .nav-movie::before{
+    display:block;
+    content:'';
+    width:650px;
+    height:2px;
+    background: #BDBDBD;
+    margin:0 auto;
+}
+.cont-movie .list-movieNav{
+    display:inline-block;
+    margin:27px 0;
+}
+.cont-movie .list-movieNav li{
+    float:left;
+}
+.cont-movie .list-movieNav li+li{
+    margin-left:60px;
+}
+.cont-movie .list-movieNav .link-nav{
+    color:#828282;
+}
+.cont-movie .list-movieNav .on .link-nav{
+    color:#000;
+    font-weight:bold;
+}
+
+/* 컨텐츠 스타일 */
+.cont-movie .list-movieInfo{
+    /* 다른 요소들을 float로 띄우고 그녀석들을 알아보기 위해 overflow:hidden */
+    overflow:hidden;
+    padding: 0 12px 24px 12px;
+    border: 2px solid #BDBDBD;
+    border-radius: 15px;
+    background:#fff
+}
+.cont-movie .list-movieInfo .tit-movie{
+    font-weight: bold;
+    line-height:23px;
+}
+.cont-movie .list-movieInfo li{
+    /* overflow hidden은 지금은 쓸모가 없지만 나중에 사용됨 */
+    /* 테두리가 살짝 깎일때 예쁘게 보이게 하기 위해서 사용 */
+    overflow:hidden;
+    float:left;
+    border:1px solid #BDBDBD;
+    border-radius:10px;
+    /* https://developer.mozilla.org/ko/docs/Web/CSS/box-shadow */
+    /* blur가 시작되는 위치 */
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin:24px 12px 0;
+}
+.cont-movie .list-movieInfo li > a[class^="link"]{
+    display:inline-block;
+    width:50%;
+    text-align:center;
+    height:41px;
+    line-height:41px;
+    background:#F2F2F2;
+    border-top:1px solid #BDBDBD;
+    /* 그런데 버튼이 떨어져 나감, 줄바꿈 때문!! */
+}
+.cont-movie .list-movieInfo li .link-reserv::after{
+    display: inline-block;
+    float:right;
+    content:'';
+    width:1px;
+    height:100%;
+    background:#BDBDBD;
+}
+.cont-movie .list-movieInfo li .link-teaser::before{
+    display: inline-block;
+    content:'';
+    width:16px;
+    height:16px;
+    background:url("../images/btn_play.png");
+    vertical-align: top;
+    margin: 11px 2px 0 0;
+}
+.cont-movie .list-movieInfo .link-movie{
+    display:block;
+    margin-bottom:11px;
+}
+.list-movieInfo .list-info{
+    margin-top:12px;
+}
+.list-movieInfo article{
+    width:180px;
+    padding:19px 19px 0 19px;
+}
+.list-movieInfo .list-info dt, .list-movieInfo .list-info dd{
+    display:inline-block;
+    font-size:13px;
+    vertical-align: top;
+    line-height:1.2;
+}
+.list-movieInfo .list-info dt{
+    font-weight:lighter;
+    color:#828282;
+}
+.list-movieInfo .list-info .multi-ellipsis{
+    width:140px;
+    height:28px;
+    float: right;
+    /* 말줄임이 되어있는데 그 위에 상위 클래스 inline-block에 취소가 된 상태, 그래서 다시 넣어준 것임  */
+    /* https://blog.naver.com/rwans0397/220646946889 */
+    /* 우리 강의자료에도 벤더프리픽스 */
+    display: -webkit-box;
+    margin-left: 5px;
+}
+.list-movieInfo .list-info .item-star{
+    float:right;
+}
+.list-movieInfo .list-info .item-star dt::after{
+    display:inline-block;
+    content:'';
+    width:14px;
+    height:13px;
+    margin-left: 5px;
+    background:url("../images/star.png");
+    vertical-align: top;
+}
+
+.list-movieInfo .list-info div{
+    display:inline-block;
+    margin-bottom:5px;
+}

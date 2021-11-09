@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,31 +9,36 @@
     <link rel="stylesheet" href="src/style/reset.css">
     <link rel="stylesheet" href="src/style/style.css">
 </head>
+
 <body>
+    <!-- html validator로 검사할 예정 -->
+    <!-- headings map을 통해 구조가 잘 짜여졌는지 확인 -->
     <h1 class="sr-only">정글 시네마</h1>
+    <!-- 익스플로러 9에서는 main을 먹지 않음 -->
     <section class="cont-movie">
         <h2 class="tit-cont">정글 시네마 영화 목록</h2>
         <header>
             <h3 class="sr-only">영화 정보 목록</h3>
-            <nav class="nav-movie">
+            <nav id="cont-nav" class="nav-movie">
                 <ul class="list-movieNav">
-                    <li class="on"><a href="#none" class="link-nav">현재상영영화</a></li>
-                    <li><a href="#none" class="link-nav">개봉예정영화</a></li>
-                    <li><a href="#none" class="link-nav">박스오피스</a></li>
+                    <li class="on"><a href="#" class="link-nav">현재상영영화</a></li>
+                    <li><a href="#"class="link-nav">개봉예정영화</a></li>
+                    <li><a href="#"class="link-nav">박스오피스</a></li>
                 </ul>
             </nav>
         </header>
         <section>
-            <h3 class="sr-only">현재 상영 영화 목록</h3>
-            <ul class="list-movieInfo">
+            <h3>현재 상영 영화 목록</h3>
+            <ul>
                 <li>
                     <article>
-                        <h4 class="sr-only">영화 상세 정보</h4>
-                        <a href="#none" class="link-movie">
-                            <img src="src/images/movie_weniv.png" alt="위니브 월드 상세 정보 페이지로 이동합니다.">
+                        <h4>영화 상세 정보</h4>
+                        <a href="#">
+                            <img src="src/images/movie_weniv.png" alt="위니브 월드 : 새로운 시대">
                         </a>
-                        <strong class="tit-movie sl-ellipsis">위니브 월드 : 새로운 시대</strong>
-                        <dl class="list-info">
+                        <strong>위니브 월드 : 새로운 시대</strong>
+                        <!-- dl이 유일하게 직계자식으로 div와 같은 것을 가질 수 있음 -->
+                        <dl>
                             <div>
                                 <dt>개요</dt>
                                 <dd>판타지</dd>
@@ -43,19 +49,17 @@
                             </div>
                             <div>
                                 <dt>개봉</dt>
-                                <dd>2021.9.30</dd>
+                                <dd>2021.03.27</dd>
                             </div>
                             <div>
                                 <dt>출연</dt>
-                                <dd>라이캣, 소울곰, 개리씨, 자바독, 파이, 썬, 빙키, 뮤라</dd>
+                                <dd>라이캣, 소울곰, 개리씨, 빙키, 썬, 뮤라, 자바독, 소울곰, 웨이드</dd>
                             </div>
                         </dl>
-                        <a href="#none">예매하기</a>
-                        <a href="#none">예고편</a>
                     </article>
-                </li>
-                <li>...생략...</li>
-                <li>...생략...</li>
+                    <a href="#">예매하기</a>
+                    <a href="#">예고편</a>
+                </ul>
                 <li>...생략...</li>
                 <li>...생략...</li>
                 <li>...생략...</li>
@@ -66,28 +70,30 @@
     </section>
     <footer>
         <section>
-            <h2 class="sr-only">기업정보</h2>
+            <h2>기업정보</h2>
             <strong>Jungle Cinema</strong>
             <dl>
-                <dt class="sr-only">회사명</dt>
-                <dd>(주) 정글 시네마</dd>
+                <dt>회사명</dt>
+                <dd>(주)정글 시네마</dd>
                 <dt>대표</dt>
-                <dd>라이언</dd>
-                <dt>사업자 번호</dt>
+                <dd>라이캣</dd>
+                <dt>사업자번호</dt>
                 <dd>000-0000-0000</dd>
-                <dt class="sr-only">업종</dt>
                 <dd>광고 영화 및 비디오물 제작업</dd>
                 <dt>주소</dt>
                 <dd>제주특별자치도</dd>
             </dl>
-            <em class="sr-only">링크목록</em>
+            <em>sns 링크 목록</em>
             <ul>
-                <li><a href="#none">twitter</a></li>
-                <li><a href="#none">facebook</a></li>
-                <li><a href="#none">instgram</a></li>
+                <!-- 접근성을 위해 텍스트를 넣어주는 것입니다. -->
+                <li><a href="#" class="link-twitter">트위터</a></li>
+                <li><a href="#" class="link-insta">인스타그램</a></li>
+                <li><a href="#" class="link-facebook">페이스북</a></li>
             </ul>
-            <small>Copyright &copy; 2021 The Jungle.All rights reserved.</small>
+            <!-- 저작권은 small이 일반적 -->
+            <small>Copyright &copy;The Jungle. All Rights Reserved.</small>
         </section>
     </footer>
 </body>
+
 </html>

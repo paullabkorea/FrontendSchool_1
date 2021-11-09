@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* 주석이 한글깨짐 방지 */
+
+/* 유틸리티 */
+/* 스크린리더 전용 */
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    /* 0으로 했을 경우 스크린리더가 못읽는 경우가 있어 1px로 설정 */
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+/* 한줄 말줄임 */
+.sl-ellipsis {
+    display:block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 두줄 말줄임 */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp */
+.multi-ellipsis{
+  overflow: hidden;
+  display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+}
+
+/* 컨테이너 스타일 */
+.cont-movie{
+    width:1006px;
+    margin:86px auto 0;
+    padding:0 27px 29px;
+    border: 2px solid #BDBDBD;
+    border-radius: 15px;
+    background:#E5E5E5;
+}
+.cont-movie .tit-cont{
+    font-size:24px;
+    text-align: center;
+    line-height:28px;
+    padding:38px 0;
+}
+
+/* nav 스타일 */
+.cont-movie .nav-movie{
+    text-align: center;
+}
+/* 장식요소는 마크업으로 하기엔 다소 아까운 면이 있음 */
+/* 마크업은 단순한 것이 좋으니 */
+.cont-movie .nav-movie::before{
+    display:block;
+    content:'';
+    width:650px;
+    height:2px;
+    background: #BDBDBD;
+    margin:0 auto;
+}
+.cont-movie .list-movieNav{
+    display:inline-block;
+    margin:27px 0;
+}
+.cont-movie .list-movieNav li{
+    float:left;
+}
+.cont-movie .list-movieNav li+li{
+    margin-left:60px;
+}
+.cont-movie .list-movieNav .link-nav{
+    color:#828282;
+}
+.cont-movie .list-movieNav .on .link-nav{
+    color:#000;
+    font-weight:bold;
+}
