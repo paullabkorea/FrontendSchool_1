@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>br태그를 안쓰고 개행</title>
+    <style>
+        .br{
+            display : block;
+        }
+
+        .sub-title {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 금지사항 -->
+    <p>Lorem ipsum dolor <br> sit amet consectetur <br> adipisicing elit. Maxime velit molestiae ad ullam, <br> consequatur, similique <br> exercitationem odit vel <br> asperiores explicabo <br> voluptatibus? Accusamus reprehenderit iste eveniet in alias deserunt, voluptate molestiae.</p>
+
+    <!-- 비권장사항 1 -->
+    <p>Lorem, ipsum <span class="br"></span>dolor sit amet consectetur adipisicing elit. <span class="br"></span>Reprehenderit, odio facilis numquam dolorem beatae id labore alias, <span class="br"></span>quis molestiae saepe <span class="br"></span>aspernatur inventore culpa? Itaque doloremque dolorum maxime natus amet dolorem?</p>
+
+    <!-- 비권장사항 2 -->
+    <p>Lorem, ipsum <span class="sub-title">dolor sit</span> amet consectetur adipisicing elit. <span class="br"></span>Reprehenderit, odio facilis numquam dolorem beatae id labore alias, <span class="br"></span>quis molestiae saepe <span class="br"></span>aspernatur inventore culpa? Itaque doloremque dolorum maxime natus amet dolorem?</p>
+
+    <!-- 권장 1 -->
+    <p>Lorem, ipsum dolor sit amet consectetur</p>
+    <p>adipisicing elit. Reprehenderit, odio facilis numquam</p>
+    <p>dolorem beatae id labore alias, quis molestiae</p>
+    <p>saepe aspernatur inventore culpa? Itaque doloremque</p>
+    <p>dolorum maxime natus amet dolorem?</p>
+
+    <!-- 권장 2 -->
+    <!-- article 넓이 조절을 통한 줄바꿈  -->
+    <!-- 색을 바꾸거나 css를 조금 다르게 할 때에도 강조하는 태그 사용 -->
+    <article>
+        <p>Lorem ipsum <strong>dolor</strong> sit amet consectetur adipisicing elit. Perspiciatis pariatur atque deserunt, asperiores est, debitis corporis, natus perferendis voluptate qui tenetur quae eaque? Cum, earum sint? Tenetur magni hic repellat!</p>
+    </article>
+</body>
+</html>

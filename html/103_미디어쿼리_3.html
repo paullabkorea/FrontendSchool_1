@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 쿼리</title>
+    <style>
+        body {
+            background-color: tomato;
+        }
+
+        .container {
+            width: 100%;
+            height: 500px;
+            background-color: yellow;
+        }
+
+        @media screen and (max-width:1000px) {
+            body {
+                background-color: green;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            body {
+                background-color: violet;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur nemo nobis! Commodi doloribus iure fugiat odio corporis vel consequatur autem, hic accusantium optio, cum soluta vitae quasi sint. Quaerat!
+        </div>
+        <div class="item">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur nemo nobis! Commodi doloribus iure fugiat odio corporis vel consequatur autem, hic accusantium optio, cum soluta vitae quasi sint. Quaerat!
+        </div>
+    </div>
+</body>
+</html>
