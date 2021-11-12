@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        @media print {
+            abbr::after {
+                /* attr() : css 속성 함수입니다. */
+                content: ' ('attr(title)')'
+            }
+        }
+
+        @media screen and (-webkit-device-pixel-ratio : 2) {
+            body {
+                background: royalblue;
+            }
+        }
+
+        div {
+            margin: 50px;
+            width: 1px;
+            height: 1px;
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <abbr title="world wide web consortium">w3c</abbr> -->
+    <div></div>
+</body>
+
+</html>
