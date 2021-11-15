@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font-2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        /* 폰트 변환 사이트에서 다른 타입으로도 넣을 수 있음 */
+        /* 
+            format에는 truetype(인쇄글꼴과 화면 글꼴 같음), 
+            eot(embeddedopentype, 익스플로러 8이하), 
+            woff(익스플로러 9이상) 등이 있음.
+        */
+        @font-face {
+            font-family: 'Gm';
+            src: url(font_file/GmarketSansTTFLight.ttf) format('truetype');
+        }
+
+        p {
+            font-family: 'Gm';
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur enim in a quidem laborum voluptas explicabo tempore incidunt corporis odit commodi repudiandae beatae odio, perspiciatis ullam. Labore, deserunt dolorum. Assumenda?</p>
+</body>
+</html>
