@@ -1,0 +1,6 @@
+1. flex-basis 값과 width 값이 '함께' 정의되면 flex-basis 값이 width 값을 덮어버림(하지만 강제하는 것은 width임!)
+2. 그래서 이미 flex:7, flex:3에서 flex-basis 값이 0으로 정의되어 있어서 width 100%가 적용되지 않음.
+3. 질문주신 분이 테스트해 본 것처럼 800px 미만일 때 width:100%가 아닌 flex-basis:100%;로 수정하면 잘 작동
+
+* 아무것도 설정하지 않은 상태라면 flex-basis:auto
+* flex: 1 선언하는 순간 자동으로 flex-basis: 0가 됩니다! 그래서 013_1.html에 오류가 있었던 것입니다.

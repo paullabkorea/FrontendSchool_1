@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungle Cinema</title>
+</head>
+
+<body>
+    <!-- html validator로 검사할 예정 -->
+    <!-- headings map을 통해 구조가 잘 짜여졌는지 확인 -->
+    <h1>정글 시네마</h1>
+    <!-- 익스플로러 9에서는 main을 먹지 않음 -->
+    <section>
+        <h2>정글 시네마 영화 목록</h2>
+        <header>
+            <h3>영화 정보 목록</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">현재상영영화</a></li>
+                    <li><a href="#">개봉예정영화</a></li>
+                    <li><a href="#">박스오피스</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <h3>현재 상영 영화 목록</h3>
+            <ul>
+                <li>
+                    <article>
+                        <h4>영화 상세 정보</h4>
+                        <a href="#">
+                            <img src="src/images/movie_weniv.png" alt="위니브 월드 : 새로운 시대">
+                        </a>
+                        <strong>위니브 월드 : 새로운 시대</strong>
+                        <!-- dl이 유일하게 직계자식으로 div와 같은 것을 가질 수 있음 -->
+                        <dl>
+                            <div>
+                                <dt>개요</dt>
+                                <dd>판타지</dd>
+                            </div>
+                            <div>
+                                <dt>평점</dt>
+                                <dd>9.05</dd>
+                            </div>
+                            <div>
+                                <dt>개봉</dt>
+                                <dd>2021.03.27</dd>
+                            </div>
+                            <div>
+                                <dt>출연</dt>
+                                <dd>라이캣, 소울곰, 개리씨, 빙키, 썬, 뮤라, 자바독, 소울곰, 웨이드</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <a href="#">예매하기</a>
+                    <a href="#">예고편</a>
+                </ul>
+                <li>...생략...</li>
+                <li>...생략...</li>
+                <li>...생략...</li>
+                <li>...생략...</li>
+                <li>...생략...</li>
+            </ul>
+        </section>
+    </section>
+    <footer>
+        <section>
+            <h2>기업정보</h2>
+            <strong>Jungle Cinema</strong>
+            <dl>
+                <dt>회사명</dt>
+                <dd>(주)정글 시네마</dd>
+                <dt>대표</dt>
+                <dd>라이캣</dd>
+                <dt>사업자번호</dt>
+                <dd>000-0000-0000</dd>
+                <dd>광고 영화 및 비디오물 제작업</dd>
+                <dt>주소</dt>
+                <dd>제주특별자치도</dd>
+            </dl>
+            <em>sns 링크 목록</em>
+            <ul>
+                <!-- 접근성을 위해 텍스트를 넣어주는 것입니다. -->
+                <li><a href="#" class="link-twitter">트위터</a></li>
+                <li><a href="#" class="link-insta">인스타그램</a></li>
+                <li><a href="#" class="link-facebook">페이스북</a></li>
+            </ul>
+            <!-- 저작권은 small이 일반적 -->
+            <small>Copyright &copy;The Jungle. All Rights Reserved.</small>
+        </section>
+    </footer>
+</body>
+
+</html>

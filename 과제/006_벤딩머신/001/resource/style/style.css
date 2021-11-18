@@ -1,0 +1,167 @@
+@charset "utf-8";
+
+/* reset */
+.img-item {
+    display: block;
+}
+
+/* util */
+/* ir은 img-replace */
+.ir {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 1px;
+    color: transparent;
+}
+
+/* layout */
+body {
+    background-color: #EAE8FE;
+}
+
+#app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0 28px;
+    padding-top: 247px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#app .vending-machine, #app .my-info {
+    width: 360px;
+    /* height: 545px; */
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+/* 타이틀 스타일링 */
+.tit-app {
+    top: 0;
+    width: 100%;
+    max-width: 386px;
+    height: 180px;
+    background: no-repeat center / 100% 100% url(../img/Logo_img.png);
+}
+
+/* 자판기 스타일링 */
+#app .vending-machine {
+    position: relative;
+    padding: 31px 27px 28px;
+}
+
+/* 자판기 아이템 리스트 */
+.vending-machine .list-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* align-items: space-between; */
+}
+
+.vending-machine .list-item li {
+    position: relative;
+    width: 30%;
+    height: 130px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* .vending-machine .list-item li.on */
+.vending-machine .list-item li:active::before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 3px solid #6327FE;
+    border-radius: 10px;
+}
+
+.vending-machine .list-item li.sold-out::before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 10px;
+    background: no-repeat center / 58px 45px url(../img/Sold-out.png) rgba(0, 0, 0, 0.8);
+}
+
+.vending-machine .list-item li.sold-out {
+    pointer-events: none;
+}
+
+.vending-machine .list-item li:nth-child(3)~li {
+    margin-top: 12px;
+}
+
+.vending-machine .btn-item {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.vending-machine .list-item .img-item {
+    width: 36px;
+    height: 65px;
+    margin: 0 auto;
+}
+.vending-machine .tit-item {
+    display: block;
+    font-size: 9px;
+    margin: 5px auto;
+}
+.vending-machine .txt-item {
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 15px;
+    background-color: #6327FE;
+    border-radius: 50px;
+    color: #fff;
+}
+
+/* 
+     col           col
+row  잔액,         거스름돈 반환
+     입금액 입력,   입금
+     획득 리스트,   획득
+*/
+
+.vending-machine .cont-return,
+.vending-machine .cont-put,
+.vending-machine .cont-get {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.cont-return .info-balance,
+.cont-put .inp-put,
+.cont-get .list-item-staged {
+    width: 65%;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.cont-return .btn-return,
+.cont-put .btn-put,
+.cont-get .btn-get {
+    width: 30%;
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.vending-machine .cont-return {
+    margin-top: 20px;
+}

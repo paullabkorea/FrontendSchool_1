@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-basis</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .item {
+            border: 5px solid black;
+            box-sizing: border-box;
+
+            /* initial 값은 flex: 0 1 auto */
+            /* One value, unitless number: flex-grow */
+            /* flex: 2; */
+            /* 이렇게 줄 경우에는 2개의 값이 무엇인지 정확하게 인지하고 있는 경우에만 사용하세요. 아니라면 flex-basis까지 주시는 것이 좋습니다. */
+            /* Two values: flex-grow | flex-basis */
+            /* flex: 1 30px; */
+            /* Two values: flex-grow | flex-shrink */
+            /* flex: 2 2; */
+            /* Three values: flex-grow | flex-shrink | flex-basis */
+            /* flex: 2 2 10%; */
+            
+            /* width: 33.33%; */
+            flex-basis: 33.33%;
+            box-sizing: border-box;
+            color: white;
+            background: goldenrod;
+        }
+
+        .inner-item {
+            width: 80vw;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">A</div>
+        <div class="item">B
+            <div class="inner-item">Test</div>
+        </div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
+</body>
+</html>
