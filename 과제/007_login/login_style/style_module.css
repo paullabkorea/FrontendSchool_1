@@ -1,0 +1,103 @@
+.btn-login{
+    width:100%;
+    padding:17px 0 15px;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 28px;
+    background-color: #2F80ED;
+    border-radius: 5px;
+    border:none;
+    color:#fff;
+    cursor: pointer;
+}
+
+.btn-close{
+    width:16px;
+    height:16px;
+    padding:0;
+    background-color: #fff;
+    border:none;
+    cursor: pointer;
+}
+
+.module-inp .inp-login{
+    display: block;
+    width:100%;
+    padding:15px 0 15px 16px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+.module-inp.module-inp-id.error .inp-login{
+    border:2px solid #F4492E;
+}
+
+.module-inp .inp-error{
+    display: none;
+    margin:6px 0 0 4px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #F4492E;
+}
+
+.module-inp.error .inp-error{
+    display: block;
+}
+
+.module-inp + .module-inp{
+    margin-top:10px;
+}
+
+.link-sns-login{
+    display: block;
+    padding:15px 0 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #767676;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #767676;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-indent: -38px;
+}
+
+
+.link-sns-login::before{
+    display: block;
+    content:"";
+    float:left;
+    width:22px;
+    height:22px;
+    margin-left:16px;
+    background-image:url("../images-login/icon_google.png");
+}
+
+.link-sns-login.icon-naver{
+    border-color:#00BF18;
+}
+
+.link-sns-login.icon-naver::before{
+    background-image:url("../images-login/icon_naver.png");
+}
+.link-sns-login.icon-facebook{
+    border-color:#2D9CDB;
+}
+
+.link-sns-login.icon-facebook::before{
+    /* background-image:url("../images-login/icon_facebook.png");
+    background-repeat:no-repeat;
+    background-position: center; */
+    background:url("../images-login/icon_facebook.png") center no-repeat;
+}
+.link-sns-login.icon-kakao{
+    border-color:#F2C94C;
+}
+
+.link-sns-login.icon-kakao::before{
+    background-image:url("../images-login/icon_kakao.png");
+}
