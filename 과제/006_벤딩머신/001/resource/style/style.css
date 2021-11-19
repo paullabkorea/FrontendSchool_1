@@ -71,16 +71,22 @@ body {
 }
 
 /* .vending-machine .list-item li.on */
-.vending-machine .list-item li:active::before {
+/* .vending-machine .list-item li:active::before { */
+.vending-machine .list-item li:active::before{
+    /* box-shadow로 주는 방법이 좋을 것 같다는 의견 */
     display: block;
     position: absolute;
     content: '';
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
+    /* width: 91px; */
+    /* height: 130px; */
+    top: 0px;
+    left: 0px;
     border: 3px solid #6327FE;
     border-radius: 10px;
+    /* border-radius: 13px; */
+    box-sizing: border-box;
 }
 
 .vending-machine .list-item li.sold-out::before {
@@ -119,7 +125,7 @@ body {
     font-size: 9px;
     margin: 5px auto;
 }
-.vending-machine .txt-item {
+.btn-item .txt-item {
     display: inline-block;
     font-size: 12px;
     padding: 5px 15px;
@@ -157,7 +163,7 @@ row  잔액,         거스름돈 반환
 .cont-get .btn-get {
     width: 30%;
     font-size: 13px;
-    padding: 6px 10px;
+    padding: 6px 8px;
     border-radius: 5px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
@@ -165,3 +171,160 @@ row  잔액,         거스름돈 반환
 .vending-machine .cont-return {
     margin-top: 20px;
 }
+
+/* 1번 */
+.cont-return .info-balance {
+    /* float가 자식을 인식할 수 있도록 */
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: #EAE8FE;
+}
+.info-balance .txt-balance {
+    float: right;
+}
+/* 3번 */
+.cont-put .inp-put {
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    line-height: 18px;
+}
+/* 5번 */
+.cont-get .list-item-staged {
+    height: 106px;
+    overflow-y: scroll;
+    padding: 12px;
+    border: 1px solid #BDBDBD;
+    background-color: #EAE8FE;
+}
+/* 5번의 아이템 */
+.list-item-staged li {
+    /* float가 자식을 인식할 수 있도록 */
+    overflow: hidden;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.list-item-staged li+li { 
+    margin-top: 6px;
+}
+.list-item-staged .img-item,
+.list-item-staged .txt-item {
+    float: left;
+}
+.list-item-staged .img-item {
+    width: 18px;
+    height: 33px;
+}
+.list-item-staged .txt-item {
+    margin-left: 10px;
+    line-height: 33px;
+    font-size: 9px;
+}
+.list-item-staged .num-counter {
+    float: right;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+/* 6번 */
+.cont-get .btn-get {
+    font-weight: 700;
+    background-color: #6327FE;
+    color: #fff;
+}
+
+
+/* 나의 정보 */
+#app .my-info {
+    background-color: #EAE8FE;
+}
+/* 소지금 */
+.my-info .cont-mymoney {
+    background-color: #fff;
+    padding: 9px 27px;
+}
+.cont-mymoney .info-mymoney {
+    background-color: #EAE8FE;
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 5px;
+}
+
+.info-mymoney .txt-mymoney {
+    float: right;
+    font-weight: 700;
+}
+
+/* 획득한 음료 */
+.my-info .cont-myitems {
+    margin-top: 20px;
+    padding: 25px 27px;
+    background-color: #fff;
+}
+.cont-myitems .tit-myitem {
+    display: block;
+    text-align: center;
+    margin-bottom: 13px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.cont-myitems .list-item-staged {
+    overflow-y: scroll;
+    height: 364px;
+    padding: 12px;
+    background-color: #EAE8FE;
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.cont-myitems .txt-total {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+@media screen 
+  and (min-device-width: 320px) /* 기기의 넓이가 320px 이상 */
+  and (max-device-width: 480px) /* 기기의 넓이가 480px 이하  */
+  and (-webkit-min-device-pixel-ratio: 2) /* 최소 1px 당 2개의 화소 */
+  {
+      body {
+          /* background-color: #fff; */
+      }
+
+      #app {
+          padding-top: 160px;
+          margin-bottom: 30px;
+      }
+
+      #app .tit-app{
+          width: 332px;
+          height: 142px;
+      }
+
+      .my-info .cont-myitems {
+          margin-top: 0;
+          padding: 31px 27px 32px;
+      }
+
+      .vending-machine {
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+      }
+
+      .cont-myitems {
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+      }
+  }
