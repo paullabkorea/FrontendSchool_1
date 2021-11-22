@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColaCola</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 class="tit-app ir">cola cola</h1>
+        <section class="vending-machine">
+            <h2 class="ir">자판기 화면</h2>
+            <ul class="list-item">
+                <li>
+                    <button 
+                        class="btn-item" 
+                        data-item="Original Cola" 
+                        data-count="" 
+                        data-price="" 
+                        data-image=""
+                    >
+                        <strong class="tit-item">Original Cola</strong>
+                        <span class="txt-price">1000원</span>
+                    </button>
+                </li>
+            </ul>
+            <!-- 반환할 정보들의 contents -->
+            <div class="cont-return">
+                <div class="info-balance">
+                    잔액 :
+                    <span class="txt-balance">1,000 원</span>
+                </div>
+                <button type="button" class="btn-return">거스름돈 반환</button>
+            </div>
+            <div class="cont-put">
+                <input type="number" class="inp-put" placeholder="입금액 입력">
+                <button type="button" class="btn-put">입금</button>
+            </div>
+        </section>
+        <section class="my-info"></section>
+    </div>
+</body>
+</html>
