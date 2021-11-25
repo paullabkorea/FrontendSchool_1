@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* div {
+            position: relative;
+            width: 500px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            clip: rect(0px 0px 0px 0px);
+            transform: scale();
+        } */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        p {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div>
+        <img src="https://thumbnews.nateimg.co.kr/view610///news.nateimg.co.kr/orgImg/is/2020/07/29/2ba65452-8e97-48e7-b572-0770c13ca904.jpg"
+            alt="">
+    </div> -->
+    <p class="blind">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro perspiciatis doloremque eum fuga laboriosam,
+        ratione at nemo facere unde ullam dolores suscipit fugiat, soluta minus cum fugit! Culpa, beatae fugit?
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro perspiciatis doloremque eum fuga laboriosam,
+        ratione at nemo facere unde ullam dolores suscipit fugiat, soluta minus cum fugit! Culpa, beatae fugit?
+    </p>
+</body>
+
+</html>

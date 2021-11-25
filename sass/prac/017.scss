@@ -1,0 +1,22 @@
+%base-button {
+    width: 133px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.follow-button {
+    @extend %base-button;
+    background-color: #ffffff;
+    color: #ff375f;
+    border: 3px solid #ff375f;
+}
+
+.message-button {
+    @extend %base-button;
+    background-color: #ff375f;
+    color: white;
+}

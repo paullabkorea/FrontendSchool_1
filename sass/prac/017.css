@@ -1,0 +1,27 @@
+.follow-button, .message-button {
+  width: 133px;
+  height: 44px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.follow-button {
+  background-color: #ffffff;
+  color: #ff375f;
+  border: 3px solid #ff375f;
+}
+
+.message-button {
+  background-color: #ff375f;
+  color: white;
+}
+/*# sourceMappingURL=017.css.map */

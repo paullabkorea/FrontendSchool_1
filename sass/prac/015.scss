@@ -1,0 +1,11 @@
+@mixin hojun-font($x, $y) {
+    font-size: $x * $y + px;
+    @content
+} 
+
+div {
+    background-color: red;
+    @include hojun-font(10, 10){
+        color: red;
+    }
+}

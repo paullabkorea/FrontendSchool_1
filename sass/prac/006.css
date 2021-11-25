@@ -1,0 +1,20 @@
+body {
+  background-color: #3e5e9e;
+  font-size: 13px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+h1 {
+  font-size: 28px;
+  color: #222;
+}
+
+p {
+  font-size: 13px;
+  color: #222;
+}
+
+a {
+  color: red;
+}
+/*# sourceMappingURL=006.css.map */

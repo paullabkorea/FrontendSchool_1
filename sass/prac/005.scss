@@ -1,0 +1,13 @@
+.article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    .article-content {
+        font-size: 14px;
+        opacity: 0.7;
+        @at-root i {
+            opacity: 0.5;
+        }
+    }
+}

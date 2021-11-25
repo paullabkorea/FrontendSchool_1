@@ -1,0 +1,22 @@
+.article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+
+.article .article-content {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+i {
+  opacity: 0.5;
+}
+/*# sourceMappingURL=005.css.map */

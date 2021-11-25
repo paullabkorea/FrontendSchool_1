@@ -1,0 +1,30 @@
+// Scss - for문
+// for문을 이용해 nth-선택자에게 각각의 image를 배경에 넣어준다.
+@for $hojun from 1 through 7 {
+    .photo-box:nth-child(#{$hojun}) {
+        background-image: url("../assets/phoster#{$hojun}.png");
+    }
+} 
+
+// .content-1 {
+//     font-size: 10px;
+//     width: 100px;
+//     height: 100px;
+//     background-color: red;
+// }
+// ...
+// .content-10 {
+//     font-size: 100px;
+//     width: 100px;
+//     height: 100px;
+//     background-color: red;
+// }
+
+@for $hojun from 1 through 10 {
+    .content-#{$hojun} {
+        font-size: #{$hojun * 10}px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+} 

@@ -1,0 +1,24 @@
+.color-circle:nth-child(1) {
+  font-size: 10px;
+  background: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.color-circle:nth-child(2) {
+  font-size: 20px;
+  background: green;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.color-circle:nth-child(3) {
+  font-size: 30px;
+  background: blue;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=025.css.map */

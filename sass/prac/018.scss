@@ -1,0 +1,19 @@
+@mixin hojunfont($x:10, $y:3) {
+    font-size: $x * $y + px;
+}
+
+.one {
+    @include hojunfont;
+}
+
+.two {
+    @include hojunfont(20);
+}
+
+.three {
+    @include hojunfont(3, 3);
+}
+
+.four {
+    @include hojunfont($y:10);
+}

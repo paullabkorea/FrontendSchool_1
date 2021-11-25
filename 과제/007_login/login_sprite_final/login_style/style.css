@@ -1,0 +1,191 @@
+@charset "utf-8";
+/* base */
+@font-face {
+    font-family: Spoqa Han Sans Neo;
+    src: url("../font/SpoqaHanSansNeo-Regular.woff") format("woff");
+    font-weight: 400;
+}
+@font-face {
+    font-family: Spoqa Han Sans Neo;
+    src: url("../font/SpoqaHanSansNeo-Medium.woff") format("woff");
+    font-weight: 500;
+}
+@font-face {
+    font-family: Spoqa Han Sans Neo;
+    src: url("../font/SpoqaHanSansNeo-Bold.woff") format("woff");
+    font-weight: 700;
+}
+
+body{
+    font-family: "Spoqa Han Sans Neo", sans-serif;
+}
+
+#appLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+
+.cont-login{
+    width: 440px;
+    padding:38px 30px 30px;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+    text-align: center;
+}
+.cont-login .tit-weniv img{
+    width:122px;
+}
+.cont-login .txt-login{
+    margin:32px 0 36px;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+/* 모달 스타일 */
+.modal-login{
+    display: none;
+    height:100%;
+}
+
+.modal-login.on{
+    display: block;
+}
+
+.modal-login::after{
+    display: block;
+    content:"";
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    background-color: black;
+    opacity: .7;
+    z-index: 10;
+}
+
+.modal-login .cont-form-login{
+    width:100%;
+    max-width:520px;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50% , -50%);
+    background-color: #fff;
+    z-index: 20;
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+}
+
+.cont-form-login .tit-form{
+    padding:20px 0 18px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    border-bottom:1px solid #C4C4C4;
+}
+
+.cont-form-login .txt-form{
+    margin:26px 0 24px;
+    padding-left:24px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.cont-form-login .form-login{
+    padding:0 24px 0;
+    text-align: center;
+}
+
+.form-login .inp-error{
+    text-align: left;
+}
+
+.form-login .labl-hold{
+    display: block;  
+    text-align: left; 
+    margin:17px 0 21px;
+    cursor: pointer;
+}
+
+.form-login .labl-hold::before{
+    display: inline-block;
+    content:'';
+    width:22px;
+    height:22px;
+    margin-right:8px;
+    background-image: url("../images-login/icon_check_empty.png");
+    vertical-align: -5px;
+}
+/* 접근성 */
+.form-login .inp-hold:focus+.labl-hold::before{
+    outline: 2px solid black;
+    border-radius: 50%;
+}
+
+.form-login .inp-hold:checked+.labl-hold::before{
+    background-image: url("../images-login/icon_check.png");
+}
+
+.form-login a[class^="link"]{
+    display: inline-block;
+    margin-top:20px;
+    line-height: 18px;
+    font-size: 14px;
+    color: #767676;
+    text-decoration: none;
+}
+
+.form-login .link-signup::after{
+    display: inline-block;
+    content: '\007C';
+    margin:0 8px 0 12px;
+}
+
+.cont-form-login .btn-close{
+    position: absolute;
+    top:0;
+    right:0;
+    padding:22px 24px;
+    box-sizing: content-box;
+    background-color:transparent;
+}
+
+.cont-form-login .cont-sns-login{
+    position:relative;
+    margin-top:30px;
+    padding:30px 24px 25px;
+}
+
+.cont-sns-login::before{
+    content:'또는';
+    display: block;
+    width:52px;
+    height:18px;
+    position: absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    text-align: center;
+    background-color: #fff;
+    z-index: 10;
+    color:#767676;
+}
+
+.cont-sns-login::after{
+    content:'';
+    display:block;
+    width:calc(100% - 48px);
+    position:absolute;
+    top:9px;
+    height:1px;
+    background:#C4C4C4;
+}
+
+.cont-sns-login .list-sns li+li{
+    margin-top:10px;
+}

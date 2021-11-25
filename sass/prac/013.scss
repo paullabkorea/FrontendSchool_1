@@ -1,0 +1,14 @@
+// Sass 공식문서
+@debug not true; // false
+@debug not false; // true
+
+@debug true and true; // true
+@debug true and false; // false
+
+@debug true or false; // true
+@debug false or false; // false
+
+// true == 1
+// false == 0
+// and == 곱
+// or == 합

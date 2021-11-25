@@ -1,0 +1,48 @@
+// Scss - while문
+// Sass 공식문서
+// value값이 base보다 작을 때까지 일정한 값으로 계속 나눠준다.
+$normal-font-size: 16px;
+
+@function scale-below($value, $base, $ratio: 2) {
+    @while $value > $base {
+        $value: ($value/$ratio);
+    }
+    @return $value;
+}
+
+.sup {
+    font-size: scale-below(20px, 4px);
+}
+
+///////////////////////////////////////
+// // 1번 순회
+// @function scale-below(20px, 4px, 2) {
+//     @while 20px > 4px {
+//         $value: 10px;
+//     }
+//     @return $value;
+// }
+
+// //2번 순회
+// @function scale-below(20px, 4px, 2) {
+//     @while 10px > 4px {
+//         $value: 5px;
+//     }
+//     @return $value;
+// }
+
+// //3번 순회
+// @function scale-below(20px, 4px, 2) {
+//     @while 5px > 4px {
+//         $value: 5px/2;
+//     }
+//     @return $value;
+// }
+
+// //4번 순회
+// @function scale-below(20px, 4px, 2) {
+//     @while 2.5px > 4px {
+//         $value: ($value/$ratio);
+//     }
+//     @return 2.5px;
+// }

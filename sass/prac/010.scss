@@ -1,0 +1,14 @@
+.info{
+    $line-normal : 1.34 !global; // 지역변수
+	font-size : 15px;
+	line-height : $line-normal;
+	text-align : right;
+    span{
+		line-height : $line-normal;
+	}
+}
+
+div {
+    color: red;
+    line-height: $line-normal;
+}
