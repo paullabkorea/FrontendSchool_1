@@ -1,1 +1,16 @@
-/* No CSS *//*# sourceMappingURL=023.css.map */
+.main {
+  background-color: green;
+  width: 200px;
+  height: 200px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    width: 100px;
+    height: 100px;
+    font-size: 14px;
+    color: red;
+  }
+}
+/*# sourceMappingURL=023.css.map */
