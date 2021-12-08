@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>renderTable</title>
+</head>
+<body>
+    <button class="dataCallButton">데이터 호출!</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>index</th>
+                <th>picture</th>
+                <th>age</th>
+                <th>eyeColor</th>
+                <th>name</th>
+                <th>gender</th>
+                <th>company</th>
+                <th>email</th>
+                <th>phone</th>
+                <th>address</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="data.js"></script>
+    <script>
+        let click = true;
+        const elems = document.querySelectorAll('tr > th');
+        const dataCallButton = document.querySelector('.dataCallButton');
+
+        dataCallButton.addEventListener('click', 
+            function(){renderTable(data)}
+        );
+
+        elems.forEach(item => {
+            item.addEventListener('click', 
+                function(){sortTable(item.textContent)}
+            )
+        });
+
+        function sortTable(key) {
+            if (click) {
+                click = false;
+                data.sort((a, b) => (a[key] < b[key] ? -1 : (a[key] > b[key] ? 1 : 0)));
+            } else {
+                click = true;
+                data.sort((a, b) => (a[key] > b[key] ? -1 : (a[key] < b[key] ? 1 : 0)))
+            }
+            renderTable(data)
+        }
+        
+        function renderTable(data) {
+            let tbodyData = [];
+            for (const iterator of data) {
+                //console.log(iterator);
+                tbodyData.push(`
+                    <tr>
+                        <td>${iterator.index}</td>
+                        <td>${iterator.picture}</td>
+                        <td>${iterator.age}</td>
+                        <td>${iterator.eyeColor}</td>
+                        <td>${iterator.name}</td>
+                        <td>${iterator.gender}</td>
+                        <td>${iterator.company}</td>
+                        <td>${iterator.email}</td>
+                        <td>${iterator.phone}</td>
+                        <td>${iterator.address}</td>
+                    </tr>
+                `)
+            }
+            // console.log(tbodyData);
+            document.querySelector('.table > tbody').innerHTML = tbodyData.join('');
+        }
+    </script>
+</body>
+</html>
