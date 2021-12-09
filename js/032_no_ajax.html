@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax 통신 연습</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <input type="text" class="id"><br>
+    <input type="password" class="pw"><br>
+    <button type="button" class="dataLoadButton">로그인!!</button>
+    <div class="dataField">data</div>
+    <script>
+        let userData = [
+            {
+                "_id": "61b05e53cc219b458f42e0e5",
+                "id": "Emerson",
+                "pw": "22626beb-46f2-43b9-be64-2fbaf4874b6d",
+                "index": 5,
+                "picture": "http://placehold.it/32x32",
+                "age": 39,
+                "eyeColor": "brown",
+                "name": "Diana Simpson",
+                "gender": "female",
+                "company": "AQUOAVO",
+                "email": "dianasimpson@aquoavo.com",
+                "phone": "+1 (805) 509-3533",
+                "address": "289 Wolf Place, Jessie, Nevada, 4775",
+                "grade": "다이아몬드"
+            },
+            {
+                "_id": "61b05e53b19b300b847a81f7",
+                "id": "hojun",
+                "pw": "1234",
+                "index": 6,
+                "picture": "http://placehold.it/32x32",
+                "age": 25,
+                "eyeColor": "green",
+                "name": "Cobb Mcfadden",
+                "gender": "male",
+                "company": "JUMPSTACK",
+                "email": "cobbmcfadden@jumpstack.com",
+                "phone": "+1 (965) 517-2000",
+                "address": "155 Ryder Street, Ruffin, Louisiana, 6528",
+                "grade": "관리자"
+            },
+            {
+                "_id": "61b05e53c9deb83252fc7f75",
+                "id": "Baker",
+                "pw": "dd20c5f8-b5ce-444c-9bcd-9a6c5c481ad0",
+                "index": 7,
+                "picture": "http://placehold.it/32x32",
+                "age": 38,
+                "eyeColor": "blue",
+                "name": "Richardson Ferguson",
+                "gender": "male",
+                "company": "TERASCAPE",
+                "email": "richardsonferguson@terascape.com",
+                "phone": "+1 (990) 516-2175",
+                "address": "123 Hale Avenue, Eggertsville, North Carolina, 115",
+                "grade": "골드"
+            }
+        ];
+
+        function success(loginUserDataParams) {
+            document.write(`
+                ${loginUserDataParams.name}님 환영합니다!
+                등급 : ${loginUserDataParams.grade},
+                멋사코인 : ${loginUserDataParams.phone.slice(-4)}
+            `);
+        }
+
+        function fail() {
+            document.write('fail');
+        }
+
+        $('.dataLoadButton').click(function() {        
+            let id = $('.id').val()
+            let pw = $('.pw').val()
+
+            loginUserData = userData.find(user => user.id === id && user.pw === pw);
+
+            // 로그인 성공시
+            if (loginUserData) {
+                success(loginUserData);
+            }
+            // 로그인 실패시
+            else {
+                fail();
+            }
+        });
+
+    </script>
+</body>
+</html>

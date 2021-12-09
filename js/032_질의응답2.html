@@ -1,0 +1,62 @@
+<script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script> 
+    <style></style>
+  </head>
+  <body>
+    <!-- <button type="button" class="dataLoadButton">클릭해주세요!</button> -->
+    <!-- <div class="dataField">data</div> -->
+    <div class="login-box">
+      <fieldset>
+        <label for="id">로그인:</label>
+        <input
+          type="text"
+          id="id"
+          name="id"
+          placeholder="아이디를 입력하세요"
+          class="id"
+          required
+        />
+        <label for="pw">패스워드:</label>
+        <input
+          type="text"
+          id="pw"
+          name="pw"
+          placeholder="비밀번호를 입력하세요"
+          class="pw"
+          required
+        />
+        <button type="button" class="dataLoadButton">로그인</button>
+      </fieldset>
+    </div>
+    <p class="=signInBox"></p>
+    <script>
+      let id = document.querySelector(".id");
+      let pw = document.querySelector(".pw");
+      let signInBox = document.querySelector(".signInBox");
+
+      if (id.toLowerCase() === "imgood") {
+        if (pw.toLowerCase() === "1234") {
+          comfirm(`${id}님 환영합니다.`);
+          signInBox.innerHTML = `${id}님의 멋사 코인은 200억원 입니다. 등급은 다이아입니다.`;
+        }
+
+        // if (confirm("인출하시겠습니까?") === true) {
+        //   alert("인출되었습니다 :) ");
+        // }
+      } else {
+        alert("로그인에 실패하였습니다.");
+      }
+
+      $(".dataLoadButton").click(function () {
+        $.ajax({
+          url: "https://raw.githubusercontent.com/paullabkorea/ajaxlogintest/main/userdata.json",
+          async: true,
+          success: function (result) {
+            $(".dataField").html(result);
+          },
+        });
+      });
+    </script>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        // 문서가 다 준비되면 실행!
+        $(function(){ // 이것을 주석처리하면 실행이 안됩니다. html이 다 로드되지 않은 상태이기 때문에 그렇습니다.
+            $('.box').fadeOut(3000).fadeIn(3000);
+        })
+    </script>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: palevioletred;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            opacity: 0.3;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="one">jQuery 실습</h1>
+    <p>hello</p>
+    <button class="btn1">클릭해!!</button>
+    <p class="실습">jQuery 실습을 하고 있습니다.</p>
+    <img>
+    <br>
+    <textarea name="메모장" id="메모장" cols="30" rows="10"></textarea>
+    <button class="btn2">메모장 내용 경고창으로 출력</button>
+    <p id="p3">hello world</p>
+    <!-- 
+        1. items 부모를 찾아 background-color를 파란색으로 바꿔주세요.
+        2. items 2번째 color를 빨간색으로 바꿔주세요
+        3. ul2의 자식인 li요소를 선택하여 1번부터 3번까지 color를 녹색으로 바꿔주세요.
+        4. ul2의 자식인 li요소를 선택하여 7번부터 10번까지 color를 파란색, background-color를 빨간색으로 바꿔주세요. 
+     -->
+    <div class="wrapper">
+        <h1 class="title">TITLE</h1>
+        <ul>
+            <li class="items">item 1</li>
+            <li class="items">item 2</li>
+            <li class="items">item 3</li>
+        </ul>
+    </div>
+    <ul class="ul2">
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+    </ul>
+    <div id="div1">hello world</div>
+    <div class="one blue">hello world</div>
+    <div class="two blue">hello world</div>
+    <p class="blue">hello world</p>
+    <div class="three">hello</div>
+    <div class="three blue">hello</div>
+    <div class="box">hello world</div>
+    <div class="box2">hello world</div>
+    <button class="btn3">눌러봐요!</button>
+    <script>
+        // document.getElementById('one').innerHTML = '!!!';
+        $('#one').text('hello jquery');
+        // $('p').hide();
+        $('.btn1').click(function(){
+            alert('클릭했네요?');
+        });
+        // $('.실습').text('실습중이에요!');
+        // $('.실습').text('<strong>실습</strong>중이에요!');
+        $('.실습').html('<strong>실습</strong>중이에요!');
+        $('.실습').css('color', 'red');
+        $('.실습').css('backgroundColor', 'blue');
+        // $('.실습').css('background-color', 'blue'); // css 부분은 카멜표기법을 따릅니다.
+        $('img').attr('src', 'a.jpg');
+        $('img').attr('data-name', '프로필').attr('data-hello', 'world');
+        $('.btn2').click(function(){
+            let 메모장값 = $('#메모장').val();
+            $('#메모장').val('값을 입력하세요.');
+            alert(메모장값);
+        });
+        $('#p3').css('color', 'red').css('backgroundColor', 'blue');
+        $('.items').parent().css('backgroundColor', 'blue');
+        $('.items').eq(1).css('color', 'red');
+        // $('.ul2').children('li:lt(3)').css('color', 'green');
+        // $('.ul2 li:lt(3)').css('color', 'green');
+        $('.ul2').children('li:gt(6)').css('color', 'red');
+        // n = 0, 1, 2...
+        // $('.ul2 :nth-child(-n+3)').css('color','green');
+        // $('.ul2 :nth-child(n+3)').css('color','green');
+        $('ul').append('<li>hello world end</li>');
+        $('ul').prepend('<li>hello world start</li>');
+        $('ul').after('<h2>끝!</h2>');
+        $('ul').before('<h2>시작!</h2>');
+        // $('#div1').remove();
+        $('#div1').addClass('important');
+        $('.one, .two, p').removeClass('blue');
+        $('.three').toggleClass('blue');
+        $('.box').fadeOut(3000).fadeIn(3000);
+        // https://electronic-moongchi.tistory.com/75
+        // $('.box').click(function(){
+        //     $(this).stop();
+        // });
+        // div 클릭했을 때 안 보이게 하기
+        // dom이 준비되면 실행해라!
+        $(function(){
+            $('.box').click(function(){
+                $(this).hide();
+            });
+        });
+        //JQuery - animate
+        //버튼 클릭했을 때 변화주기
+        $('.btn3').click(function() {
+            $('.box2').animate({
+                width: '300px',
+                height: '300px',
+                opacity: 1,
+            }, 'slow');
+        });
+
+        $(".box2").hover(function(){
+            $(this).css("background-color", "yellow");
+        }, function(){
+            $(this).css("background-color", "blue");
+        });
+
+        $(".box2").mouseenter(function(){
+            alert("You entered p1!");
+        });
+        $(".box2").mouseleave(function(){
+            alert("Bye! You now leaved p1!");
+        });
+    </script>
+</body>
+</html>

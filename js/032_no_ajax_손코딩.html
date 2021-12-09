@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>..제이쿼리 로드..</script>
+</head>
+<body>
+    <input type="text" class="id"><br>
+    <input type="password" class="pw"><br>
+    <button type="button" class="dataLoadButton">로그인!!</button>
+    <div class="dataField">data</div>
+    <script>
+        let userData = [
+            ...중략...
+            {
+                "id": "hojun",
+                "pw": "1234",
+                ...중략...
+                "phone": "+1 (965) 517-2000",
+                "grade": "관리자"
+            },
+            ...중략...
+        ];
+
+        function success(loginUserDataParams) {
+            document.write(`
+                ${loginUserDataParams.name}님 환영합니다!
+                등급 : ${loginUserDataParams.grade},
+                멋사코인 : ${loginUserDataParams.phone.slice(-4)}
+            `);
+        }
+
+        function fail() {
+            document.write('fail');
+        }
+
+        $('.dataLoadButton').click(function() {        
+            let id = $('.id').val()
+            let pw = $('.pw').val()
+
+            loginUserData = userData.find(user => user.id === id && user.pw === pw);
+
+            // 로그인 성공시
+            if (loginUserData) {
+                success(loginUserData);
+            }
+            // 로그인 실패시
+            else {
+                fail();
+            }
+        });
+
+    </script>
+</body>
+</html>
