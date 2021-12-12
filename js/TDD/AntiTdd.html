@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article {
+            display: inline-block;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .viewer {
+            display: block;
+            font-size: 24px;
+            color: green;
+            margin: 50px 0 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <strong class="viewer"></strong>
+        <input type="text" class="inp-txt">
+        <!-- 서로 다른 언어가 섞여 있습니다. -->
+        <button class="btn-push" onclick="push()">적용</button>
+    </article>
+
+    <script>
+        // 전역 변수가 사용되고 있습니다.
+        let txt = "Hello Lions";
+
+        // 함수가 아니기 때문에 테스트가 불가능합니다.
+        const viewer = document.querySelector('.viewer');
+        viewer.textContent = txt;
+
+        // 재사용성이 떨어진다. 
+        function push() {
+            const inpTxt = document.querySelector('.inp-txt');
+            viewer.textContent = inpTxt.value;
+        }
+        // 테스트가 가능하려면!!
+        // 1. 코드를 UI 에서 완전히 분리합니다.
+        // 2. 자바스크립트를 JS 파일로 분리합니다.
+        // 3. 모든 기능은 함수로 구현합니다. 
+    </script>
+</body>
+
+</html>
