@@ -922,11 +922,141 @@ t.root.left.data
 3
 t.root.right.right.data
 9
+t.root.right.left.data
+6
 
+// 아래처럼 넣는 순서에 따라 순서가 바뀜 주의!
+let t = new Tree(5); // root노드는 처음에!!
+t.append(3);
+t.append(9);
+t.append(8);
+t.append(4);
+t.append(1);
+t.append(6);
+
+t.root.data
+5
+t.root.left.data
+3
+t.root.left.left.data
+1
+t.root.right.left.data
+8
+t.root.right.left.left.data
+6
 
 
 // 6. 트리의 순회
+class Node {
+    constructor(data){
+        this.data = data;
+        // this.child = []; // 2진트리가 아닌 트리가 됨
+        this.left = null;
+        this.right = null;
+    }
+}
 
+class Tree {
+    constructor(data) {
+        let init = new Node(data);
+        this.root = init;
+        this.데이터수 = 0;
+    }
+
+    length(){
+        return this.데이터수;
+    }
+
+    insert(data){
+        let 새로운노드 = new Node(data);
+        let 순회용현재노드 = this.root;
+
+        while(순회용현재노드){
+            if (data === 순회용현재노드.data){
+                // 중복된 값은 탈락!
+                return;
+            }
+            if (data < 순회용현재노드.data){
+                // 들어온 데이터가 작으면 왼쪽에
+                // 비어있으면 데이터를 넣고, 비어있지 않으면 타고 또 내려가야합니다.
+                if (!순회용현재노드.left){
+                    순회용현재노드.left = 새로운노드;
+                    return;
+                }
+                순회용현재노드 = 순회용현재노드.left;
+            }
+            if (data > 순회용현재노드.data){
+                // 들어온 데이터가 크면 오른쪽에
+                // 비어있으면 데이터를 넣고, 비어있지 않으면 타고 또 내려가야합니다.
+                if (!순회용현재노드.right){
+                    순회용현재노드.right = 새로운노드;
+                    return;
+                }
+                순회용현재노드 = 순회용현재노드.right;
+            }
+        }
+        
+        this.데이터수 += 1;
+    }
+
+    // 깊스너큐, 파선아실
+    // 갈메기털빼
+    DFS(){
+        // 깊이우선탐색, DFS(Depth First Search)
+        // Stack 이용!
+        let 결과값 = [];
+        let 스택 = [this.root];
+        
+        while(스택.length !== 0){
+            let current = 스택.pop();
+            if (current.right) {
+                스택.push(current.right);
+            }
+            if (current.left) {
+                스택.push(current.left);
+            }
+            결과값.push(current.data);
+        }
+        return 결과값;
+    }
+
+    BFS(){
+        // 너비우선탐색, DFS(Breadth First Search)
+        // Queue 이용!
+        let 결과값 = [];
+        let 큐 = [this.root];
+
+        while (큐.length !== 0) {
+            let current = 큐.shift();
+            if (current.left) {
+                큐.push(current.left)
+            } 
+            if (current.right) {
+                큐.push(current.right)
+            }
+            결과값.push(current.data)
+        }
+        return 결과값
+    }
+}
+
+let t = new Tree(5); // root노드는 처음에!!
+t.insert(3);
+t.insert(8);
+t.insert(1);
+t.insert(4);
+t.insert(6);
+t.insert(9);
+
+
+t.root.data
+5
+t.root.left.data
+3
+t.root.right.right.data
+9
+t.root.right.left.data
+6
 
 
 // 목차(실전 코딩테스트 풀이)
@@ -1048,9 +1178,162 @@ console.log(solution(n, arr1, arr2));
 
 
 ////
+// 다트 게임
+// https://tech.kakao.com/2017/09/27/kakao-blind-recruitment-round-1/
+// 문자열 파싱(Parsing)
 
 
+testcase = [
+    '1S2D*3T',
+    '1D2S#10S',
+    '1D2S0T'
+];
 
+for (const c of testcase) {
+    console.log(solution(c));
+}
+
+// 37, 9, 3
+
+//step1
+const dartResult = '1S2D3T'
+let answer = [];
+let result = 0;
+let temp = 0; // 임시점수
+
+for (let i = 0; i < dartResult.length; i++) {
+    // console.log(dartResult[i]);
+    if (dartResult[i] >= 0 && dartResult[i] <=9 ) {
+        temp = parseInt(dartResult[i]);
+    } else if (dartResult[i] == 'S'){
+        answer.push(temp);
+    } else if (dartResult[i] == 'D'){
+        // answer.push(Math.pow(temp, 2));
+        answer.push(temp**2);
+    } else if (dartResult[i] == 'T'){
+        // answer.push(Math.pow(temp, 3));
+        answer.push(temp**3);
+    }
+}
+
+console.log(answer);
+
+
+//step2
+const dartResult = '1D2S#10S'
+let answer = [];
+let result = 0;
+let temp = 0; // 임시점수
+
+for (let i = 0; i < dartResult.length; i++) {
+    // console.log(dartResult[i]);
+    if (dartResult[i] >= 0 && dartResult[i] <=9 ) {
+        if (dartResult[i] == 1 && dartResult[i+1] == 0) {
+            temp = 10;
+            i++;
+        } else {
+            temp = parseInt(dartResult[i]);
+        }
+    } else if (dartResult[i] == 'S'){
+        answer.push(temp);
+    } else if (dartResult[i] == 'D'){
+        // answer.push(Math.pow(temp, 2));
+        answer.push(temp**2);
+    } else if (dartResult[i] == 'T'){
+        // answer.push(Math.pow(temp, 3));
+        answer.push(temp**3);
+    } else if (dartResult[i] == '*'){
+        answer[answer.length-1] *= 2
+        answer[answer.length-2] *= 2
+    } else if (dartResult[i] == '#'){
+        answer[answer.length-1] *= -1
+    }
+}
+for (let i = 0; i < answer.length; i++) {
+    result += answer[i];
+}
+
+console.log(answer);
+
+// step3
+function solution(dartResult) {
+    let answer = [];
+    let result = 0;
+    let temp = 0; // 임시점수
+    
+    for (let i = 0; i < dartResult.length; i++) {
+        // console.log(dartResult[i]);
+        if (dartResult[i] >= 0 && dartResult[i] <=9 ) {
+            if (dartResult[i] == 1 && dartResult[i+1] == 0) {
+                temp = 10;
+                i++;
+            } else {
+                temp = parseInt(dartResult[i]);
+            }
+        } else if (dartResult[i] == 'S'){
+            answer.push(temp);
+        } else if (dartResult[i] == 'D'){
+            // answer.push(Math.pow(temp, 2));
+            answer.push(temp**2);
+        } else if (dartResult[i] == 'T'){
+            // answer.push(Math.pow(temp, 3));
+            answer.push(temp**3);
+        } else if (dartResult[i] == '*'){
+            answer[answer.length-1] *= 2;
+            answer[answer.length-2] *= 2;
+        } else if (dartResult[i] == '#'){
+            answer[answer.length-1] *= -1;
+        }
+    }
+    for (let i = 0; i < answer.length; i++) {
+        result += answer[i];
+    }
+    return result;
+}
+
+
+//////////
+// https://tech.kakao.com/2017/09/27/kakao-blind-recruitment-round-1/
+// 캐시문제
+// 키워드 : LRU 알고리즘, 페이지 교체 알고리즘
+// 3	["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"]	50
+// 3	["Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul"]	21
+// 2	["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju", "NewYork", "Rome"]	60
+
+testcase = [
+    [3, ["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"]],
+    [3, ["Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul"]],
+    [2, ["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju", "NewYork", "Rome"]]
+];
+
+for (const [cacheSize, cities] of testcase) {
+    console.log(solution(cacheSize, cities));
+}
+
+// 50, 21, 60
+
+function solution(cacheSize, cities) {
+    let time = 0;
+    let cache = [];
+    for (let i = 0; i < cities.length; i++) {
+        let city = cities[i].toLowerCase();
+        let index = cache.indexOf(city);
+        if (index !== -1) {
+            // hit
+            cache.splice(index, 1);
+            cache.push(city);
+            time += 1;
+        } else {
+            // miss
+            time += 5;
+            cache.push(city);
+            if (cacheSize < cache.length) {
+                cache.shift();
+            }
+        }
+    }
+    return time;
+}
 
 
 // 2. 19년도
