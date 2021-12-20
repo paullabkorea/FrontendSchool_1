@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // case 1.
+        // var me = { age: 30 }; // 참조 카운팅 1개
+        // var you = me;         // 2개
+        // me = null;            // 1개
+        // you = null;           // 0개
+
+
+        // case 2.
+        var x = {
+            y: {
+                z: 1
+            }
+        };
+        // x 참조 객체를 object1, y 참조 객체를 object2
+
+        var a = x; // object1 객체의 참조 카운트 : 2 ( x, a )
+        x = 1;     // object1 객체의 참조 카운트 : 1 ( a )
+
+        var b = a.y; // object2 객체의 참조 카운트 : 2 ( y, b )
+        a = 2;       // object1 객체의 참조 카운트 : 0
+
+        // 이렇게 더 이상 사용하지 않지만 메모리에 불필요하게 남아 있는 객체가 있을 경우 메모리 누수(leak)가 발생했다고 합니다.
+
+    </script>
+</body>
+
+</html>

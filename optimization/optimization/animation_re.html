@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 100px;
+        }
+
+        .target {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            transition: 0.1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="target"></div>
+    <script>
+        const target = document.querySelector(".target");
+        // 이동할 거리
+        let pos = 0;
+        // 키의 상태
+        let keys = {};
+
+        document.addEventListener('keydown', move);
+        document.addEventListener('keyup', stop);
+
+        function move(event) {
+            keys[event.key] = true;
+        }
+        function stop(event) {
+            keys[event.key] = false;
+        }
+
+        function play() {
+            if (keys.ArrowRight) {
+                pos += 5;
+                target.style.transform = `translateX(${pos}px)`;
+            }
+            if (keys.ArrowLeft) {
+                pos -= 5;
+                target.style.transform = `translateX(${pos}px)`;
+            }
+            window.requestAnimationFrame(play);
+        }
+
+        window.requestAnimationFrame(play);
+
+
+        // function move(event) {
+        //     const keyName = event.key;
+        //     if (keyName === 'ArrowRight') {
+        //         pos += 5;
+        //         target.style.transform = `translateX(${pos}px)`;
+        //     }
+        //     if (keyName === 'ArrowLeft') {
+        //         pos -= 5;
+        //         target.style.transform = `translateX(${pos}px)`;
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
