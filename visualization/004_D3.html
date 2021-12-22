@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="canvas"></div>
+    <script>
+        const canvas = d3.select('.canvas');
+
+        const svg = canvas.append('svg') //추가
+            .attr('height', 1000) // 속성 지정
+            .attr('width', 1000);
+
+        svg.append('text') // 추가, text 형태로 추가
+            .attr('x', 200)
+            .attr('y', 200) // 좌측 상단 기준 좌표
+            .attr('fill', 'black')
+            .text('hello world')
+            .style('font-weight', 'bold')
+            .style('font-size', '34px');
+        // .style('font-style', 'Nanum Pen Script'); 
+        // google font style은 바로 적용 안됨 (import를 사용해서 root에 추가하는 방법으로 해결 가능)
+
+        svg.append('rect') // 추가, 사각형 형태로 추가
+            // .attr('x', 10)
+            // .attr('y', 10)
+            .attr('width', 200)
+            .attr('height', 200)
+            .attr('fill', 'hotpink')
+
+        svg.append('circle') // 추가, 원 형태로 추가
+            // .attr('x', 10)
+            // .attr('y', 10)
+            .attr('r', 50)
+            .attr('cx', 200) // x 축
+            .attr('cy', 200) // y 축
+            .attr('fill', 'blue')
+
+        svg.append('line')
+            .attr('x1', 200) // x축 시작
+            .attr('y1', 200) // y축 시작
+            .attr('x2', 300) // x축 끝
+            .attr('y2', 300) // y축 끝
+            .attr('stroke', 'black')
+        
+    </script>
+</body>
+</html>

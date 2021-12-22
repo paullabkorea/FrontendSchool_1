@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg width="500" height="500"></svg>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        const sampleData = [100,10,30,50,10,70,200,90];
+        const svg = d3.select("svg");
+        const barWidth = 30;
+        sampleData.forEach((data,index)=>{
+            svg.append('rect')
+                .attr('height', data)
+                .attr('width', 30)
+                .attr('x', 40 * index) //막대 생성좌표 x 막대의 좌측
+                .attr('y', 300 - data) //막대 생성 좌표 y 막대의 윗부분
+            
+            svg.append("text")
+                .attr('x', 40 * index + 5) //표시할 글자 x좌표, 자릿수를 체킹해서 3자리인 경우 좀 덜 + 해야 합니다.
+                .attr('y', 300 - data - 5) //표시할 글자 y좌표
+                .style("font-size", "0.85em") //글자크기
+                .style("color", "#222") //글자색
+                .text(data + ''); //넣을 문자열
+        })
+    </script>
+</body>
+</html>
