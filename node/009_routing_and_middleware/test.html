@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>신발가게</h1>
+    <p id="title">이름</p>
+    <p id="cost">가격</p>
+    <script>
+        const title = document.getElementById('title');
+        const cost = document.getElementById('cost');
+        fetch('http://localhost:8080', {method: 'GET'})
+        // .then(console.log) //주석 풀면 콘솔에서 응답값 볼 수 있음
+        .then(res => res.json())
+        .then(json => {
+            title.innerHTML = json.이름;
+            cost.innerHTML = json.가격;
+        })
+        .catch(console.log);
+    </script>
+</body>
+</html>
