@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>감귤마켓 | 로그인</title>
+</head>
+<body>
+    <!-- 
+        email = test@test.com
+        pw = test001 
+    -->
+    <main class="login-email">
+        <h1 class="main-title login-email-title">
+            로그인
+        </h1>
+        <section class="login-email-container">
+            <h2 class="ir">이메일, 비밀번호 입력 컨테이너</h2>
+            <form>
+                <div class="input-container">
+                    <label for="">이메일</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="input-container input-container-pw">
+                    <label for="">비밀번호</label>
+                    <input type="password" id="pw">
+                    <!-- 경고 메시지는 input 밑으로 생성 -->
+                    <!-- <strong class="input-warning-msg">* 아이디 또는 비밀번호가 일치하지 않습니다.</strong> -->
+                </div>
+                <button id="login-btn" class="init-button l-button disabled-button login-btn" type="button">로그인</button>
+                <button class="join-email-btn" type="button">이메일로 회원가입</a>
+            </form>
+        </section>
+    </main>
+    <script>
+        async function login(){
+            const email = document.querySelector("#email")
+            const pw = document.querySelector("#pw")
+            const res = await fetch("http://146.56.183.55:5050/user/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body : JSON.stringify({
+                    "user": {
+                        "email": email.value,
+                        "password": pw.value,
+                    }
+                })
+            });
+            const json = await res.json();
+            console.log(json);
+        }
+        document.querySelector("#login-btn").addEventListener('click', login);
+    </script>
+</body>
+</html>

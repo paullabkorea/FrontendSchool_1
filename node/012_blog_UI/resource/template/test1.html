@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog 완성</title>
+</head>
+<body>
+    {% for i in data %}
+        <h2>{{ i.id }} - {{ i.title }}</h2>
+        <p>{{ i.content }}</p>
+        <p>{{ i.pubDate }}</p>
+        <p>{{ i.modDate }}</p>
+        <p>{{ i.viewCount }}</p>
+    {% endfor %}
+</body>
+</html>

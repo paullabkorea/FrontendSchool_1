@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>넌적스 테스트 3</title>
+</head>
+<body>
+    {# 주석, 조건문, 변수, 필터, 사전식정렬 #}
+    <h1>넌적스 문법 테스트</h1>
+    {#
+        Comparisons :
+        ==
+        ===
+        !=
+        !==
+        >
+        >=
+        <
+        <=
+
+        Logic : 
+        and
+        or
+        not
+    #}
+    {% for i in 예금 %}
+        {% if i.금액 <= 100 %}
+            <h2 style="color:red;">{{ i.은행명}}</h2>
+            <p>{{ i.계좌번호 }}</p>
+            <p>{{ i.금액 }}</p>
+        {% elif i.금액 <= 200 %}
+            <h2 style="color:blue;">{{ i.은행명}}</h2>
+            <p>{{ i.계좌번호 }}</p>
+            <p>{{ i.금액 }}</p>
+        {% else %}
+            <h2 style="color:green;">{{ i.은행명}}</h2>
+            <p>{{ i.계좌번호 }}</p>
+            <p>{{ i.금액 }}</p>
+        {% endif %}
+    {% endfor %}
+
+    <p>--------------</p>
+    {% set x = 10 %}
+    {% set y = 20 %}
+    <p>{{ x + y }}</p>
+    <p>--------------</p>
+
+    {#
+        Addition: +
+        Subtraction: -
+        Division: /
+        Division and integer truncation: //
+        Division remainder: %
+        Multiplication: *
+        Power: **
+    #}
+    <p>--------------</p>
+    {% set xx = 10 %}
+    {% set yy = 3 %}
+    <p>{{ xx / yy }}</p>
+    <p>{{ xx // yy }}</p>
+    <p>--------------</p>
+
+    {# 템플릿 필터 #}
+    {# 우리가 true로 설정해 Autoescaping이 됩니다. #}
+    {{ text }} 
+    {{ text | safe }}
+    {{ text | escape }}
+    {{ -x | abs }}
+
+    <hr>
+    <p>아래와 같은 것 말고도 join, reverse 같은 것을 지원합니다. 게시판에 게시물 정렬하기 좋겠죠.</p>
+    {% set items = {
+        'ae': 1,
+        'ad': 2,
+        'ac': 3,
+        'ba': 4,
+        'bf': 5,
+        'bb': 6
+    } %}
+    {% for item in items | dictsort %}
+        {{ item }}
+    {% endfor %}
+</body>
+</html>
