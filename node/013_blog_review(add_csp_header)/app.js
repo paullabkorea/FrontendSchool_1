@@ -13,6 +13,8 @@ const blogs = require('./database/dataBlog');
 const dateFilter = require('nunjucks-date-filter');
 const path = require('path');
 const { expressCspHeader, INLINE, NONE, SELF } = require('express-csp-header');
+const app = express();
+
 app.use(expressCspHeader({
     directives: {
         'script-src': [SELF, INLINE, 
@@ -23,7 +25,6 @@ app.use(expressCspHeader({
     }
 }));
 
-const app = express();
 app.set('view engine', 'html');
 
 경로 = path.join(path.join(__dirname + '/resource'), '/static');
