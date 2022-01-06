@@ -1,0 +1,22 @@
+{
+  "name": "019_mongoDB",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app1.js",
+  "scripts": {
+    "start": "nodemon app1.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.5",
+    "multer": "^1.4.4",
+    "nunjucks": "^3.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

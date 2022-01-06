@@ -1,0 +1,7 @@
+2022-01-05 14:41:57 info: GET /
+2022-01-05 14:42:06 info: GET /
+2022-01-05 14:42:20 info: GET /notice/100
+2022-01-05 14:42:22 info: GET /notice/101
+2022-01-05 14:42:25 info: GET /notice/120
+2022-01-05 14:44:19 error: Error message
+2022-01-05 14:44:23 error: Error message

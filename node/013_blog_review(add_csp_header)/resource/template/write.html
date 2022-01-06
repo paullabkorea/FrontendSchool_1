@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- {
+    "title" : "title4",
+    "content" : "content4",
+    "section" : "section4"
+} -->
+    <form action="/blog" method="post">
+        <label for="title">title</label>
+        <input type="text" id="title" name="title"><br>
+        <label for="content">content</label>
+        <input type="text" id="content" name="content"><br>
+        <label for="section">section</label>
+        <input type="text" id="section" name="section"><br>
+        <button>글작성</button>
+    </form>
+{% endblock %}

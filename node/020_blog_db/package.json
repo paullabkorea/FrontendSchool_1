@@ -1,0 +1,24 @@
+{
+  "name": "012_blog_UI",
+  "version": "1.0.0",
+  "main": "app1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "helmet": "^4.6.0",
+    "mongoose": "^6.1.4",
+    "morgan": "^1.10.0",
+    "nunjucks": "^3.2.3",
+    "nunjucks-date-filter": "^0.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "description": ""
+}

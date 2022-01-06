@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for i in data %}
+    <!-- Post preview-->
+    <div class="post-preview">
+        <a href="/blog/{{ i.id }}">
+            <h2 class="post-title">{{ i.title }}</h2>
+            <h3 class="post-subtitle">{{ i.content }}</h3>
+        </a>
+        <p class="post-meta">
+            <!-- nunjucks date format filter -->
+            {{ i.section }}, {{ i.pubDate | date("YYYY-MM-DD") }}
+        </p>
+    </div>
+    <!-- Divider-->
+    <hr class="my-4" />
+    {% endfor %}
+    <!-- Pager-->
+    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+
+{% endblock %}
