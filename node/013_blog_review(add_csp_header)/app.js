@@ -12,6 +12,16 @@ const blogRouter = require('./router/blog.js');
 const blogs = require('./database/dataBlog');
 const dateFilter = require('nunjucks-date-filter');
 const path = require('path');
+const { expressCspHeader, INLINE, NONE, SELF } = require('express-csp-header');
+app.use(expressCspHeader({
+    directives: {
+        'script-src': [SELF, INLINE, 
+        "https://cdnjs.cloudflare.com", 
+        "https://use.fontawesome.com",
+        "https://fonts.googleapis.com",
+        "https://cdn.jsdelivr.net"]
+    }
+}));
 
 const app = express();
 app.set('view engine', 'html');
