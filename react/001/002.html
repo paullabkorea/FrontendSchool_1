@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello world</title>
+</head>
+<body>
+    <!-- <div>header
+        <div>menu</div>
+    </div>
+    
+    <div>main
+        <h1>hello world 002.html</h1>
+        <p>hello world 002.html</p>
+    </div>
+    
+    <div>product
+        div*20(best seller 옷)
+    </div>
+    
+    <div>footer</div> -->
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script> 
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/babel">
+        class Body extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <h1>body h1이다!</h1>
+                        <Header/>
+                        <Main/>
+                        <Product/>
+                        <Footer/>
+                    </div>
+                )
+            }
+        }
+
+        class Header extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <h1>header</h1>
+                        <div>menu</div>
+                    </div>
+                )
+            }
+        }
+
+        class Main extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <h1>main</h1>
+                        <h3>hello world</h3>
+                        <p>hello world</p>
+                    </div>
+                )
+            }
+        }
+
+        class Product extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <h1>product</h1>
+                        div*20(best seller 옷)
+                    </div>
+                )
+            }
+        }
+
+        class Footer extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <h1>footer</h1>
+                    </div>
+                )
+            }
+        }
+
+        const domContainer = document.querySelector('#root');
+        ReactDOM.render(
+                    <div>    
+                        <Body/>
+                        <Body/>
+                        <Body/>
+                        <Body/>
+                        <Body/>
+                        <Body/>
+                        <Footer/>
+                        <Footer/>
+                        <Footer/>
+                        <Footer/>
+                    </div>
+            , domContainer);
+        console.dir(ReactDOM);
+    </script>
+</body>
+</html>
